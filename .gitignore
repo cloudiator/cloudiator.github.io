@@ -2,3 +2,4 @@ _site/
 Gemfile.lock
 .idea/
 cloudiator.github.io.iml
+.DS_Store
