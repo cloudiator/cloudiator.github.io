@@ -3,3 +3,4 @@ Gemfile.lock
 .idea/
 cloudiator.github.io.iml
 .DS_Store
+.sass-cache/
