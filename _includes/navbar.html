@@ -17,13 +17,19 @@
                 <li><a href="/">Home</a></li>
                 {% endif %}
             </ul>
+            <ul class="nav navbar-nav">
+                {% if page.active == "dev" %}
+                <li class="active"><a href="dev.html">Development</a></li>
+                {% else %}
+                <li><a href="dev.html">Development</a></li>
+                {% endif %}
+            </ul>
             <ul class="nav navbar-nav navbar-right">
                 {% if page.active == "contact" %}
                 <li class="active"><a href="contact.html">Contact us</a></li>
                 {% else %}
                 <li><a href="contact.html">Contact us</a></li>
                 {% endif %}
-
             </ul>
         </div><!--/.nav-collapse -->
     </div>
