@@ -9,5 +9,4 @@ sass:
     # If true, compiles sass directly into your jekyll source directory
     # As well as your destination directory
 
-markdown: redcarpet
 highlighter: pygments
