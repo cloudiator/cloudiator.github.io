@@ -10,9 +10,5 @@ respectively the open-source version [MariaDB](https://mariadb.org/) as database
 
 ![alt text][mediawiki_architecture]
 
-
-
-
 [mediawiki_architecture]: /images/docs/mediawiki_architecture.png "Architecture of MediaWiki"
-
-
+{: height="10px"}
