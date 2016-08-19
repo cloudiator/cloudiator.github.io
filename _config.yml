@@ -9,4 +9,15 @@ sass:
     # If true, compiles sass directly into your jekyll source directory
     # As well as your destination directory
 
-highlighter: pygments
+name: Cloudiator
+description: A cross-cloud orchestration framework
+url: http://localhost:4000
+
+favicon: img/favicon.png
+
+collections:
+  docs:
+    output: true
+
+markdown: kramdown
+highlighter: rouge

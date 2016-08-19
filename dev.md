@@ -1,6 +1,5 @@
 ---
 title: Development
-layout: sidebar
-active: dev
+layout: default
 ---
 Development

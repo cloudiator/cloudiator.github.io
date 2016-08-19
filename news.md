@@ -1,6 +1,4 @@
 ---
 title: Cloudiator
-layout: default
+layout: news
 ---
-
-Test
