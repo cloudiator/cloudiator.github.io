@@ -1,6 +1,5 @@
 ---
 title: Cloudiator
-layout: default
+layout: home
 ---
 
-Test

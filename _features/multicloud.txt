@@ -1,0 +1,9 @@
+---
+heading: Multi-Cloud
+image: images/features/multicloud.png
+---
+Cloudiator supports multiple cloud providers,
+meaning that an application can easily be deployed using
+multiple cloud provider‘s platforms.
+This supports the user in avoiding vendor lock-in.
+

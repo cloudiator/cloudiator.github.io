@@ -1,0 +1,35 @@
+<div class="featurette">
+
+    {% for item in site.data.features %}
+
+    <hr class="featurette-divider">
+
+    {% assign item_path = item | prepend:"_features/" | append:".txt" %}
+    {% assign p = site.features | where:"relative_path", item_path | first %}
+
+    {% assign loopindex = forloop.index | modulo: 2 %}
+
+    {% if loopindex == 0 %}
+        {% assign heading_class = "col-md-7" %}
+        {% assign image_class = "col-md-5" %}
+    {% endif %}
+    {% if loopindex == 1 %}
+        {% assign heading_class = "col-md-7 col-md-push-5" %}
+        {% assign image_class = "col-md-5 col-md-pull-7" %}
+    {% endif %}
+
+    <div class="row featurette">
+        <div class="{{ heading_class }}">
+            <h2 class="featurette-heading">{{ p.heading }}</h2>
+            <p class="lead">{{ p.content }}</p>
+        </div>
+        <div class="{{ image_class }}">
+            <img class="featurette-image img-responsive center-block" src="{{ p.image }}" alt="{{ p.heading }}">
+        </div>
+    </div>
+
+    {% endfor %}
+
+    <hr class="featurette-divider">
+
+</div>
