@@ -27,4 +27,4 @@ collections:
 markdown: kramdown
 highlighter: rouge
 
-exclude: [vendor, script]
+exclude: [README.md, vendor, script]
