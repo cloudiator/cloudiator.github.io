@@ -1,0 +1,20 @@
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Web Page</th>
+        <th>Logo</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for item in site.data.projects %}
+    <tr>
+        <td>{{ item.name }}</td>
+        <td>{{ item.description }}</td>
+        <td><a href="{{ item.webPage }}">{{ item.webPage }}</a></td>
+        <td><img src="{{ item.logo}}" alt="{{ item.name }} Logo"/></td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
