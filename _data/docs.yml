@@ -3,9 +3,11 @@
     - introduction
     - architecture
     - installation
+    - troubleshooting
 
 - title: Tutorial
   docs:
     - tutorial
     - mediawiki
     - tutorial_cloud
+
