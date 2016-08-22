@@ -1,5 +1,5 @@
 ---
-layout: news_item
+layout: news
 title: Welcome
 author: Daniel Baur
 ---
