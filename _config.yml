@@ -26,3 +26,5 @@ collections:
 
 markdown: kramdown
 highlighter: rouge
+
+exclude: [vendor, script]
