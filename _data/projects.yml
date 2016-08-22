@@ -1,14 +1,25 @@
 - name: Cactos
-  description:
-  logo:
-  webPage:
+  description: "Context-Aware Cloud Topology Optimization and Simulation –
+    is a project that investigates models and methods to increase the efficiency of cloud applications
+    on a heterogeneous hardware infrastructure, in particular considering costs and energy efficiency.
+    The project coordinator is Ulm University."
+  logo: /images/projects/cactos.png
+  webPage: http://www.cactosfp7.eu/
 
 - name: PaaSage
-  description:
-  logo:
-  webPage:
+  description: "Model-based Cross-Cloud Development and Deployment Platform.
+    The project provides an open source integrated platform to
+    support design, model-based development,
+    configuration, optimization and deployment of
+    existing and new Cloud applications independently
+    of the existing underlying Cloud infrastructures."
+  logo: /images/projects/paasage.png
+  webPage: http://www.paasage.eu/
 
 - name: CloudSocket
-  description:
-  logo:
-  webPage:
+  description: "Business and IT-Cloud Alignment using a Smart Socket.
+    This project investigates the concept of Business Process as a Service (BPaaS) by creating
+    environments for the different stages, i.e. from the modelling of business processes up
+    to their execution as a service in the Cloud."
+  logo: /images/projects/cloudsocket.png
+  webPage: https://www.cloudsocket.eu/
