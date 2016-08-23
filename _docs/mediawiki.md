@@ -8,7 +8,7 @@ deploy Mediawiki as three-tier Architecture, using [HAProxy](http://www.haproxy.
 the [Apache Webserver](https://httpd.apache.org/) as application server and [MySQL](https://www.mysql.de/) 
 respectively the open-source version [MariaDB](https://mariadb.org/) as database. The architecture is depicted in the following picture.
 
-![alt text][mediawiki_architecture]
+![Architecture of MediaWiki][mediawiki_architecture]
 
-[mediawiki_architecture]: /images/docs/mediawiki_architecture.png "Architecture of MediaWiki"
-{: height="150px"}
+[mediawiki_architecture]: /images/docs/mediawiki_architecture.png
+{: .img-responsive .center-block}

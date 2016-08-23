@@ -1,21 +1,23 @@
 <h2>Component Profile</h2>
 
-<table class="table table-striped">
-    <tbody>
-    <tr>
-        <td>Name</td>
-        <td>{{page.name}}</td>
-    </tr>
-    <tr>
-        <td>Short Description</td>
-        <td>{{page.short}}</td>
-    </tr>
-    <tr>
-        <td>Github</td>
-        <td><a href="{{ page.github }}">{{ page.github }}</a></td>
-    </tr>
-    <tr>
-        <td>Javadoc</td>
-        <td><a href="{{ page.javadoc }}">{{ page.javadoc }}</a></td>
-    </tr>
-</table>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <tbody>
+        <tr>
+            <td>Name</td>
+            <td>{{page.name}}</td>
+        </tr>
+        <tr>
+            <td>Short Description</td>
+            <td>{{page.short}}</td>
+        </tr>
+        <tr>
+            <td>Github</td>
+            <td><a href="{{ page.github }}">{{ page.github }}</a></td>
+        </tr>
+        <tr>
+            <td>Javadoc</td>
+            <td><a href="{{ page.javadoc }}">{{ page.javadoc }}</a></td>
+        </tr>
+    </table>
+</div>

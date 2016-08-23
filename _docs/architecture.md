@@ -9,7 +9,7 @@ while the remote domain runs in every virtual machine managed by Cloudiator.
 
 ### Home Domain
 
-![alt text][architecture_home]
+![Architecture of the Home Domain][architecture_home]
 
 Using Colosseum‘s API the user can submit a new deployment request depicting an description of the application 
 and the desired virtual machine configuration. Afterwards, the resource broker will select the 
@@ -21,7 +21,7 @@ In addition, the home domain hosts the scaling engine of Axe, responsible of orc
 
 ### Remote Domain
 
-![alt text][architecture_remote]
+![Architecture of the Remote Domain][architecture_remote]
 
 The tools of the remote domain are installed on each virtual machine managed by Cloudiator. 
 It contains Lance, our lifecycle agent, responsible for deploying and managing the application components. 
@@ -32,5 +32,8 @@ calculating composite metrics and a distributed manner.
 
 
 
-[architecture_home]: /images/docs/architecture_home.png "Architecture of the Home Domain"
-[architecture_remote]: /images/docs/architecture_remote.png "Architecture of the Remote Domain"
+[architecture_home]: /images/docs/architecture_home.png
+{: .img-responsive .center-block}
+
+[architecture_remote]: /images/docs/architecture_remote.png
+{: .img-responsive .center-block}

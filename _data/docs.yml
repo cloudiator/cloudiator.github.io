@@ -5,6 +5,13 @@
     - installation
     - troubleshooting
 
+- title: Model
+  docs:
+    - cloud
+    - application
+    - monitoring
+    - scalability
+
 - title: Tutorial
   docs:
     - tutorial
