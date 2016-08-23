@@ -1,14 +1,32 @@
-<ul class="nav nav-sidebar">
+<div class="panel-group" id="accordion">
+
     {% for section in site.data.docs %}
-    <li>
-        {{ section.title }}
-        <ul>
-            {% for item in section.docs %}
+    {% assign sectionIndex = forloop.index %}
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion"
+                   href="#collapse{{ sectionIndex }}"><span
+                        class="glyphicon glyphicon-folder-close">
+                            </span>{{ section.title }}</a>
+            </h4>
+        </div>
+        <!-- todo: find a way to assign in class to current section -->
+        <div id="collapse{{ sectionIndex }}" class="panel-collapse collapse in">
+            <table class="table">
+                {% for item in section.docs %}
                 {% assign item_url = item | prepend:"/docs/" | append:".html" %}
                 {% assign p = site.docs | where:"url", item_url | first %}
-                <li><a href="{{ site.url }}{{ p.url }}">{{ p.title }}</a></li>
-            {% endfor %}
-        </ul>
-    </li>
+                <tr>
+                    <td>
+                        <a href="{{ site.url }}{{ p.url }}">{{ p.title }}</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
     {% endfor %}
-</ul>
+
+</div>
