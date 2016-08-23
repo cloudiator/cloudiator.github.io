@@ -28,6 +28,6 @@ and add the newly created doc section.
 
 ### Adding a new feature to the frontpage.
 
-Create a new .txt file in the [features](_features) folder using the same header
-as the other ones. Afterwards edit the [features.yml](_data/features.yml) file
-and include the new feature.
+Edit the [features.yml](_data/features.yml) file
+and include the new feature using the same attributes than the previous
+ones.

@@ -1,8 +1,0 @@
----
-heading: Cross-cloud deployments
-image: images/features/crosscloud.png
----
-Cloudiator can deploy the component instances of one application
-across multiple cloud platforms, making it possible to select
-the best offer on component basis and increasing availability.
-

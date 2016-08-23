@@ -1,9 +1,0 @@
----
-heading: Monitoring
-image: images/features/monitoring.png
----
-Cloudiator’s monitoring system, allows the collection
-of system and application metrics by sensors as well
-as an easy to use push interface.
-
-

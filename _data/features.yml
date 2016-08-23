@@ -1,5 +1,32 @@
-- multicloud
-- crosscloud
-- monitoring
-- adaptation
-- docker
+- name: Multi-Cloud
+  description: "Cloudiator supports multiple cloud providers,
+    meaning that an application can easily be deployed using
+    multiple cloud provider‘s platforms.
+    This supports the user in avoiding vendor lock-in."
+  image: /images/features/multicloud.png
+
+- name: Cross-cloud deployments
+  description: "Cloudiator can deploy the component instances of one application
+    across multiple cloud platforms, making it possible to select
+    the best offer on component basis and increasing availability."
+  image: /images/features/crosscloud.png
+
+- name: Monitoring
+  description: "Cloudiator’s monitoring system, allows the collection
+    of system and application metrics by sensors as well
+    as an easy to use push interface."
+  image: /images/features/monitoring.png
+
+- name: Adaptation
+  description: "Cloudiator features an aggregation and adaptation
+    workflow, allowing the user to aggregate metrics and
+    react on deviations using a simple, yet powerful scalability rule language"
+  image: /images/features/adaptation.png
+
+- name: Docker
+  description: "Cloudiator has built-in docker support,
+    allowing usage of docker images and isolating
+    components running on the same virtual machine."
+  image: /images/features/docker.png
+
+

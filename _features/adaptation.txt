@@ -1,9 +1,0 @@
----
-heading: Adaptation
-image: images/features/adaptation.png
----
-Cloudiator features an aggregation and adaptation
-workflow, allowing the user to aggregate metrics and
-react on deviations using a simple, yet powerful scalability rule language
-
-

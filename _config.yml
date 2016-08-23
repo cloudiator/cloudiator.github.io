@@ -12,15 +12,13 @@ sass:
 name: Cloudiator
 description: A cross-cloud orchestration framework
 url: https://cloudiator.github.io
-#url: http://localhost:4000
+# url: http://localhost:4000
 
 favicon: images/favicon.png
 
 collections:
   docs:
     output: true
-  features:
-    output: false
   components:
     output: true
 

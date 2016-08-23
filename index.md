@@ -1,5 +1,5 @@
 ---
 title: Cloudiator
-layout: home
+layout: index
 ---
 

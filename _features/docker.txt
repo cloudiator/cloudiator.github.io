@@ -1,9 +1,0 @@
----
-heading: Docker
-image: images/features/docker.png
----
-Cloudiator has built-in docker support, 
-allowing usage of docker images and isolating 
-components running on the same virtual machine. 
-
-

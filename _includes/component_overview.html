@@ -1,5 +1,6 @@
-<table class="table table-striped">
-    <thead>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
         <tr>
             <th>Name</th>
             <th>Short Description</th>
@@ -7,18 +8,23 @@
             <th>Javadoc</th>
             <th>Documentation</th>
         </tr>
-    </thead>
-    <tbody>
-    {% for item in site.data.components %}
+        </thead>
+        <tbody>
+        {% for item in site.data.components %}
         {% assign item_url = item | prepend:"/components/" | append:".html" %}
         {% assign p = site.components | where:"url", item_url | first %}
         <tr>
             <td>{{ p.name }}</td>
             <td>{{ p.short }}</td>
             <td><a href="{{ p.github }}">{{ p.github }}</a></td>
-            <td><a href="{{ p.javadoc }}">{{ p.javadoc }}</a></td>
+            <td>
+                {% if p.javadoc != blank %}
+                <a href="{{ p.javadoc }}">{{ p.javadoc }}</a>
+                {% endif %}
+            </td>
             <td><a href="{{ site.url }}{{ p.url }}">{{ site.url }}{{ p.url }}</a></td>
         </tr>
-    {% endfor %}
-    </tbody>
-</table>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
