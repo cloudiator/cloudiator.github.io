@@ -15,7 +15,7 @@ Edit the [projects.yml](_data/projects.yml) file.
 ### Adding a new reference
 
 Edit the [bibtex.bib](_files/bibtex.bib) file and add the new reference. Afterwards
-run the [bib.sh](_scripts/bib.sh) script. It will automatically generate the 
+run the [bib.sh](script/bib.sh) script. It will automatically generate the 
 [bibliography](_includes/generated/publication.html). You need to have
 [bibtex2html](https://www.lri.fr/~filliatr/bibtex2html/) installed and in your
 path.
