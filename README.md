@@ -20,6 +20,11 @@ run the [bib.sh](script/bib.sh) script. It will automatically generate the
 [bibtex2html](https://www.lri.fr/~filliatr/bibtex2html/) installed and in your
 path.
 
+### Adding a new headline to the home page carousel
+
+Edit the [carousel.yml](_data/carousel.yml) file, and add a new item using the same
+attributes as the previous ones.
+
 ### Adding a new section to the docs.
 
 Create a new mardown document in the [docs](_docs) folder including the 
