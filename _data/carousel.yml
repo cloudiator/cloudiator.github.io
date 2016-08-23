@@ -1,0 +1,18 @@
+- headline: "Headline 1"
+  text: "Caption Text 1"
+  image: "data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
+  link: "#"
+  button: "Button 1"
+
+- headline: "Headline 2"
+  text: "Caption Text 2"
+  image: "data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
+  link: "#"
+  button: "Button 2"
+
+- headline: "Headline 2"
+  text: "Caption Text 2"
+  image: "data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
+  link: "#"
+  button: "Button 2"
+
