@@ -23,10 +23,14 @@ This application description is generelly split into a type and instance model:
 ## Application, ApplicationComponents and (Lifecycle)Component
 
 As described above, the application description is threefold and consists of Components, ApplicationComponents
-and an Application. This allows reuse from Components between different Applications, e.g. a once create
-haProxy Component could be reused in the Application "MediaWiki" but also in a "Wordpress" Application.
+and an Application.
 
 ![Type model of cloudiator][type_model]
+
+This allows the reuse of components across other applications. A user could needs to model the MariaDB component
+only once and afterwards can reuse it in other applications, e.g. a wiki application and a WordPress application.
+
+![Reuse of application components][wiki_wordpress]
 
 
 ## Communication
@@ -45,4 +49,7 @@ haProxy Component could be reused in the Application "MediaWiki" but also in a "
 {: .img-responsive .center-block}
 
 [communication_type]: /images/docs/communication_type.png
+{: .img-responsive .center-block}
+
+[wiki_wordpress]: /images/docs/wiki_wordpress.png
 {: .img-responsive .center-block}
