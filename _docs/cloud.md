@@ -51,6 +51,10 @@ The following picture gives an example:
 
 ## Discovery
 
+Cloudiator features an automatic resource discovery mechanism. This means, that
+as soon the user has created the api, cloud and cloud credential entities, 
+Cloudiator will start requesting the offers of the cloud provider and import
+them to the internal database.
 
 
 [cloud_model]: /images/docs/cloud_model.png

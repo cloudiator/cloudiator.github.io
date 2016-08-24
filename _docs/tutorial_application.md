@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Application Description
+title: Application Model
 ---
 
 ## Introduction

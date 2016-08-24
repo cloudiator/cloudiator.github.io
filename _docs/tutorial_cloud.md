@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Cloud Description
+title: Cloud Model
 ---
 
 ## Introduction
