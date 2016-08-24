@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Application Description
+title: Application Model
 ---
 
 ## Introduction
@@ -48,6 +48,8 @@ only once and afterwards can reuse it in other applications, e.g. a wiki applica
 | shutdown | |
 {: .table .table-striped .table-responsive}
 
+## Virtual Machine Template
+
 ## Communication
 
 Communication describes the dependencies between components of an application. Every component of
@@ -82,7 +84,7 @@ deploy times.
 {: .table .table-striped .table-responsive}
 
 
-
+## Application Instance, Instance and Virtual Machines
 
 
 
