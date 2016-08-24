@@ -32,10 +32,54 @@ only once and afterwards can reuse it in other applications, e.g. a wiki applica
 
 ![Reuse of application components][wiki_wordpress]
 
+| Lifecycle Action | Description |
+| --- | --- |
+| preInstall | |
+| install | |
+| postInstall | |
+| start | |
+| startDetection | |
+| stopDetection | |
+| preStart | |
+| postStart | |
+| preStop | |
+| stop | |
+| postStop | |
+| shutdown | |
+{: .table .table-striped .table-responsive}
 
 ## Communication
 
+Communication describes the dependencies between components of an application. Every component of
+an application can define communication offers via provided ports that can be consumed by other components
+of the application via required ports. This link between components is established by communication
+entities, linking the described ports. Communication to the outside world (e.g. the user) is depicted
+by using an provided port but not attaching any communication entity to it.
+
+Communication is described on type and application component level. This means, 
+that for every application where a component is reused, a different communication pattern can be
+configured.
+
+The communication description also acts as dependency mechanism, that is used by Cloudiator to derive
+the provisioning order of the component instances. Cloudiator offers two types of dependency mechanism:
+
+- a mandatory communication, where the component on the providing side needs to be started before the component
+    consuming the communication (required side). This is the default mechanism and it is depicted by setting the mandatory
+    flag in the communication entity to true.
+- a non-mandatory communication, where both component can start independently from each other. The user may supply
+    a script that is later called on the consuming side of the application as soon as the providing side is started. This
+    can be modelled by setting the mandatory flag to false and by providing an update action in the required port entity.
+    
+Tip: If possible, use the non-mandatory communication. While it is in general more difficult to describe with respect
+to scripting, it allows Cloudiator to achieve more parallelism when deploying the application resulting in faster
+deploy times.
+
 ![Communication Type Model][communication_type]
+
+| Environment Variable | Description |
+| --- | --- |
+| foo| bar |
+{: .table .table-striped .table-responsive}
 
 
 
