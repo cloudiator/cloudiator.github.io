@@ -2,38 +2,45 @@
 
     <!-- Indicators -->
     <ol class="carousel-indicators">
-        {% for item in site.data.carousel %}
-
-        {% assign loopindex = forloop.index %}
-
-        <li data-target="#carousel" data-slide-to="{{ loopindex }}"
-            class="{% if loopindex == 1 %}active{% endif %}"></li>
-        {% endfor %}
+        <li data-target="#carousel" data-slide-to="1"
+            class="active"></li>
+        <li data-target="#carousel" data-slide-to="2"
+            class=""></li>
     </ol>
 
     <div class="carousel-inner" role="listbox">
-
-        {% for item in site.data.carousel %}
-
-        {% assign loopindex = forloop.index %}
-
-        <div class="item {% if loopindex == 1 %}active{% endif %}">
-            <img src="{{ item.image }}"
-                 alt="{{ item.headline }}">
+        <div class="item active">
+            <img src="/images/logo.png"
+                 alt="Cloudiator Logo">
             <div class="container">
                 <div class="carousel-caption">
-                    <h1>{{ item.headline }}</h1>
-                    <p>{{ item.text }}</p>
                     <p>
-                        <a class="btn btn-lg btn-primary" href="{{ item.link }}" role="button">
-                            {{ item.button }}
+                        Cloudiator is a cross-cloud orchestration tool, allowing you to describe
+                        an application once and deploy it on virtual machines at different cloud providers.
+                    </p>
+                    <p>
+                        <a class="btn btn-lg btn-primary" href="/docs/installation.html" role="button">
+                            Install Now
                         </a>
                     </p>
                 </div>
             </div>
         </div>
-
-        {% endfor %}
+        <div class="item">
+            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
+                 alt="Placeholder">
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>Placeholder</h1>
+                    <p>Placeholder</p>
+                    <p>
+                        <a class="btn btn-lg btn-primary" href="#" role="button">
+                            Placeholder
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
     <a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
