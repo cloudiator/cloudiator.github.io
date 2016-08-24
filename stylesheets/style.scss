@@ -53,6 +53,18 @@ html {
   color: black;
 }
 
+.carousel-control {
+  color: black;
+}
+
+.carousel .right {
+  background-image: linear-gradient(90deg, white, #00447a);
+}
+
+.carousel .left {
+  background-image: linear-gradient(90deg, #00447a, white);
+}
+
 /* Declare heights because of positioning of img element */
 .carousel .item {
   height: 500px;
