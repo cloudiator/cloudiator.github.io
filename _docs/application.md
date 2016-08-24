@@ -50,6 +50,10 @@ only once and afterwards can reuse it in other applications, e.g. a wiki applica
 
 ## Virtual Machine Template
 
+The virtual machine template entity provides the glue between the cloud/resource model and the application model.
+It describes the concrete offers that will be used to power a virtual machine for the application component. A virtual
+machine template always represents the tuple of Image, Hardware and Location.
+
 ## Communication
 
 Communication describes the dependencies between components of an application. Every component of
@@ -78,6 +82,8 @@ deploy times.
 
 ![Communication Type Model][communication_type]
 
+
+
 | Environment Variable | Description |
 | --- | --- |
 | foo| bar |
@@ -86,7 +92,10 @@ deploy times.
 
 ## Application Instance, Instance and Virtual Machines
 
-
+The instance model is represented by three main entities:
+    - an application instance: groups multiple component instances of the same application. This allows multiple running instances of the same application.
+    - an instance: represents an installation of an application component on a virtual machine.
+    - a virtual machine: a running virtual machine instantiated from the virtual machine template.
 
 [type_model]: /images/docs/type_model.png
 {: .img-responsive .center-block}

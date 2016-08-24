@@ -3,7 +3,6 @@
     - introduction
     - architecture
     - installation
-    - troubleshooting
 
 - title: Model
   docs:
@@ -18,4 +17,8 @@
     - mediawiki
     - tutorial_cloud
     - tutorial_application
+
+- title: Help
+  docs:
+    - troubleshooting
 
