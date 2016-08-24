@@ -79,7 +79,7 @@ String cloudName = "My Openstack";
 client.controller(Cloud.class).updateOrCreate(
     new CloudBuilder().api(apiId).endpoint(endpoint)
         .name(cloudName).build());
-        
+        __
 {% endhighlight %}
 
 #### REST

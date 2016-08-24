@@ -82,7 +82,9 @@ deploy times.
 
 ![Communication Type Model][communication_type]
 
-
+When deploying the application, the owner's scripts can access the defined communications. Cloudiator will set
+environment variables based on downstream dependencies and the name of the defined communication. The environment
+variables are depicted in the following table.
 
 | Environment Variable | Description |
 | --- | --- |
