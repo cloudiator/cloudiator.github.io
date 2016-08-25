@@ -26,6 +26,8 @@ collections:
   components:
     output: true
 
+google_site_verification: 1_UKbWPLg8mXzsfaB0OSRpLVp2vqfJ3DNdGSisGQ4o8
+
 markdown: kramdown
 highlighter: rouge
 
