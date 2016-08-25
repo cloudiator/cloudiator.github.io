@@ -19,6 +19,7 @@ logo: /images/logo.png
 
 gems:
   - jekyll-seo-tag
+  - jekyll-sitemap
 
 collections:
   docs:
