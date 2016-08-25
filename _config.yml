@@ -10,11 +10,15 @@ sass:
     # As well as your destination directory
 
 name: Cloudiator
-description: A cross-cloud orchestration framework
+description: A multi-tenant, cross-cloud orchestration framework.
 url: https://cloudiator.github.io
 # url: http://localhost:4000
 
-favicon: images/favicon.png
+favicon: /images/favicon.png
+logo: /images/logo.png
+
+gems:
+  - jekyll-seo-tag
 
 collections:
   docs:
