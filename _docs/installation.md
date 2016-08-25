@@ -9,6 +9,12 @@ Currently, we only provide shell scripts for installing Cloudiator on an
 Ubuntu (14.04 LTS) operating system.
 
 You can find the scripts at [Github](https://github.com/cloudiator/installation/tree/master/shell/ubuntu).
+
+Note: it is expected that you execute those scripts on an extra server or virtual machine solely for cloudiator,
+as the scripts currently do not check for already existing directories or other installed packages!
+
+Please note that even after the installation has finished, it will take some time until colosseum starts. You
+can track the progress by connecting to the screen it is started in (sudo screen -r).
  
 ## Networking
 
