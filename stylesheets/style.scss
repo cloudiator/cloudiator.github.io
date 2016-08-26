@@ -20,6 +20,60 @@ body {
   border: 0;
 }
 
+.navbar-default {
+  background-color: #00447a;
+  border-color: #92acbe;
+}
+.navbar-default .navbar-brand {
+  color: #dddddd;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #ffffff;
+}
+.navbar-default .navbar-text {
+  color: #dddddd;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #dddddd;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #ffffff;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #ffffff;
+  background-color: #92acbe;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #ffffff;
+  background-color: #92acbe;
+}
+.navbar-default .navbar-toggle {
+  border-color: #92acbe;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #92acbe;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #dddddd;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #dddddd;
+}
+.navbar-default .navbar-link {
+  color: #dddddd;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffffff;
+}
+
 html {
   position: relative;
   min-height: 100%;
@@ -86,35 +140,52 @@ html {
   margin-right:10px;
 }
 
-.sidebar {
-  position: fixed;
-  top: 51px;
-  bottom: 0;
-  left: 0;
-  z-index: 1000;
-  display: block;
-  padding: 20px;
-  overflow-x: hidden;
-  overflow-y: auto;
-  border-right: 1px solid #eee;
+#sidebar {
+  //display: none;
 }
 
+/* Hide for mobile, show later */
+#sidebar {
+  display: none;
+}
 
-/*
- * Main content
- */
+#menu-toggle {
+  display: block;
+}
 
-.main {
+@media (min-width: 768px) {
+
+  #sidebar {
+    display: block;
+  }
+
+  #menu-toggle {
+    display: none;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 51px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background-color: #00447a;
+    border-right: 1px solid #eee;
+  }
+}
+
+.docs-content {
   padding: 20px;
 }
 @media (min-width: 768px) {
-  .main {
+  .docs-content {
     padding-right: 40px;
     padding-left: 40px;
   }
-}
-.main .page-header {
-  margin-top: 0;
 }
 
 /*
@@ -141,5 +212,9 @@ body {
 .article img {
   max-width: 400px;
   max-height: 300px;
+}
+
+.btn-primary {
+  background-color: #00447a;
 }
 
