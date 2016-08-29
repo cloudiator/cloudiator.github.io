@@ -49,3 +49,15 @@ default configuration values, can be found in the [Colosseum](/components/coloss
 
 ## Configuring Sword
 
+While our cloud abstraction framework tries to be as generic as possible, trying to automatically detect
+most configuration options, there may be situations where you need to adapt the configuration to your
+cloud. Cloudiator offers two possibilities to configure those properties:
+
+- a global configuration in the colosseum configuration file
+- a per cloud configuration per API
+
+All configuration parameters can be seen in the [Sword docs](/components/sword.html).
+
+### Global
+
+### Cloud
