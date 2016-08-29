@@ -80,3 +80,11 @@ java -Dconfig.file=path-to-your-config-file -jar colosseum-example-jar-with-depe
 {% endhighlight %}
 
 The program will automatically exit as soon as the mediawiki installation is running.
+
+## Video
+
+A video is available showing a example run of the program:
+
+<div class="embed-responsive embed-responsive-16by9">
+    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ZdunLXKraT4"></iframe>
+</div>
