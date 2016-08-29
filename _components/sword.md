@@ -52,3 +52,5 @@ Openstack Nova | http://docs.openstack.org/developer/nova/ | openstack-nova | [E
 Google Compute Engine | https://cloud.google.com/compute/ | google-compute-engine | @todo
 {: class="table table-striped"}
 </div>
+
+## Configuration
