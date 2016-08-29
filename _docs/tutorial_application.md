@@ -567,5 +567,99 @@ Finally, we can start creating the entities using the API of Cloudiator.
 
 {% endhighlight %}
 
+### Creating the virtual machine template
+
+#### REST
+
+#### colosseum-client
+
+{% highlight java linenos %}
+
+    VirtualMachineTemplate virtualMachineTemplate =  client.controller(VirtualMachineTemplate.class).create(
+        new VirtualMachineTemplateBuilder().cloud(cloud.getId()).location(location.getId())
+                .image(image).hardware(hardware.getId()).build());
+
+{% endhighlight %}
+
+### Creating the application components
+
+#### REST
+
+#### colosseum-client
+
+{% highlight java linenos %}
+
+    ApplicationComponent loadBalancerApplicationComponent =
+        client.controller(ApplicationComponent.class).create(
+            new ApplicationComponentBuilder().application(application.getId())
+                .component(loadBalancer.getId())
+                .virtualMachineTemplate(virtualMachineTemplate.getId()).build());
+
+    ApplicationComponent wikiApplicationComponent =
+        client.controller(ApplicationComponent.class).create(
+            new ApplicationComponentBuilder().application(application.getId())
+                .component(wiki.getId())
+                .virtualMachineTemplate(virtualMachineTemplate.getId()).build());
+
+    ApplicationComponent mariaDBApplicationComponent =
+        client.controller(ApplicationComponent.class).create(
+            new ApplicationComponentBuilder().application(application.getId())
+                .component(mariaDB.getId())
+                .virtualMachineTemplate(virtualMachineTemplate.getId()).build());
+
+{% endhighlight %}
+
+### Creating the ports
+
+#### REST
+
+#### colosseum-client
+
+{% highlight java linenos %}
+
+    //database
+    final PortProvided mariadbprov = client.controller(PortProvided.class).create(
+        new PortProvidedBuilder().name("MARIADBPROV")
+            .applicationComponent(mariaDBApplicationComponent.getId()).port(3306).build());
+    // wiki
+    final PortProvided wikiprov = client.controller(PortProvided.class).create(
+        new PortProvidedBuilder().name("WIKIPROV")
+            .applicationComponent(wikiApplicationComponent.getId()).port(80).build());
+    final PortRequired wikireqmariadb = client.controller(PortRequired.class).create(
+        new PortRequiredBuilder().name("WIKIREQMARIADB")
+            .applicationComponent(wikiApplicationComponent.getId()).isMandatory(true).build());
+    // lb
+        final PortProvided lbprov = client.controller(PortProvided.class).create(
+            new PortProvidedBuilder().name("LBPROV")
+                .applicationComponent(loadBalancerApplicationComponent.getId()).port(80).build());
+        final PortRequired loadbalancerreqwiki = client.controller(PortRequired.class).create(
+            new PortRequiredBuilder().name("LOADBALANCERREQWIKI")
+                .applicationComponent(loadBalancerApplicationComponent.getId())
+                .isMandatory(false)
+                .updateAction("./mediawiki-tutorial/scripts/lance/haproxy.sh configure")
+                .build());
+                
+{% endhighlight %}
+
+### Creating the communication
+
+#### REST
+
+#### colosseum-client
+
+{% highlight java linenos %}
+
+    // wiki communicates with database
+    final Communication wikiWithDB = client.controller(Communication.class).create(
+        new CommunicationBuilder().providedPort(mariadbprov.getId())
+            .requiredPort(wikireqmariadb.getId()).build());
+    //lb communicates with wiki
+    final Communication lbWithWiki = client.controller(Communication.class).create(
+        new CommunicationBuilder().providedPort(wikiprov.getId())
+            .requiredPort(loadbalancerreqwiki.getId()).build());
+
+{% endhighlight %}
+
+
 [mediawiki_communication]: /images/docs/mediawiki_communication.png
 {: .img-responsive .center-block}

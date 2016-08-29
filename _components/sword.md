@@ -11,6 +11,35 @@ layout: dev_component
 Sword is the multi-cloud abstraction layer Cloudiator uses to talk to the different
 cloud programming interfaces.
 
+## Maven
+
+The latest release of Sword is available in maven central, while the latest
+snapshot can be retrieved from the [OSSRH](https://oss.sonatype.org/content/repositories/snapshots/).
+
+### Release
+
+{% highlight xml %}
+
+<dependency>
+    <groupId>io.github.cloudiator.sword</groupId>
+    <artifactId>service</artifactId>
+    <version>0.1.0</version>
+</dependency>
+
+{% endhighlight %}
+
+### Snapshot
+
+{% highlight xml %}
+
+<dependency>
+    <groupId>io.github.cloudiator.sword</groupId>
+    <artifactId>service</artifactId>
+    <version>0.2.0-SNAPSHOT</version>
+</dependency>
+
+{% endhighlight %}
+
 ## Supported Providers
 
 {::options parse_block_html="true" /}
@@ -23,11 +52,3 @@ Openstack Nova | http://docs.openstack.org/developer/nova/ | openstack-nova | [E
 Google Compute Engine | https://cloud.google.com/compute/ | google-compute-engine | @todo
 {: class="table table-striped"}
 </div>
-
-### Openstack (Nova)
-
-### Flexiant Cloud Orchestrator (FCO)
-
-### Amazon Elastic Compute Cloud (EC2)
-
-### Google Compute Engine (GCE)
