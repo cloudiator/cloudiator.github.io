@@ -4,6 +4,8 @@ short: Main Orchestration Component
 github: https://github.com/cloudiator/colosseum
 javadoc: 
 layout: dev_component
+release: 0.1.0
+snapshot: 0.2.0-SNAPSHOT
 ---
 
 ## Configuration

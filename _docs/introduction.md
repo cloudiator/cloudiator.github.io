@@ -3,4 +3,4 @@ layout: docs
 title: Introduction
 ---
 
-Introduction
+Welcome to the documentation of Cloudiator.

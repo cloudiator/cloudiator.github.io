@@ -60,4 +60,47 @@ All configuration parameters can be seen in the [Sword docs](/components/sword.h
 
 ### Global
 
+When setting a global configuration option, this is valid for all clouds. This means if you set a property for the openstack-nova driver of Sword, this property
+will be valid for all currently used clouds using the openstack-nova driver.
+
+A global configuration option can be set in the [Colosseum](/components/colosseum.html) configuration file.
+
+The syntax is colosseum.cloud.properties + the [Sword](/components/sword.html) property you want to set. The example
+below globally configures the sword.ec2.ami.query option.
+
+{% highlight conf %}
+
+colosseum.cloud.properties.sword.ec2.ami.query = "state=available;image-type=machine;"
+
+{% endhighlight %}
+
 ### Cloud
+
+The settings can also be set on a per-cloud basis, meaning that the property will only
+affect this specific cloud. For this purpose the entity CloudProperty can be used. 
+
+#### colosseum-client
+
+{% highlight java linenos %}
+
+Cloud cloud;
+String key = sword.ec2.ami.query;
+String value = "state=available;image-type=machine;"
+
+client.controller(CloudProperty.class).updateOrCreate(
+                    new CloudPropertyBuilder().cloud(cloud.getId()).key(key)
+                        .value(value).build());
+                        
+{% endhighlight %}
+
+#### REST
+
+{% highlight json linenos %}
+
+{
+    "cloud": 1,
+    "key": "sword.ec2.ami.query",
+    "value": "state=available;image-type=machine;"
+}
+
+{% endhighlight %}
