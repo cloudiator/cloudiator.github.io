@@ -20,7 +20,7 @@ snapshot can be retrieved from the [OSSRH](https://oss.sonatype.org/content/repo
 
 ### Release
 
-{% highlight xml %}
+```xml
 
 <dependency>
     <groupId>io.github.cloudiator.sword</groupId>
@@ -28,11 +28,11 @@ snapshot can be retrieved from the [OSSRH](https://oss.sonatype.org/content/repo
     <version>0.1.0</version>
 </dependency>
 
-{% endhighlight %}
+```
 
 ### Snapshot
 
-{% highlight xml %}
+```xml
 
 <dependency>
     <groupId>io.github.cloudiator.sword</groupId>
@@ -40,7 +40,7 @@ snapshot can be retrieved from the [OSSRH](https://oss.sonatype.org/content/repo
     <version>0.2.0-SNAPSHOT</version>
 </dependency>
 
-{% endhighlight %}
+```
 
 ## Supported Providers
 

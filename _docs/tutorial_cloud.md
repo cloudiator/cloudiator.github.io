@@ -48,29 +48,29 @@ or direct REST (e.g. by using a client like [Insomnia](https://chrome.google.com
 
 #### colosseum-client
 
-{% highlight java linenos %}
+```java
     String apiName = "openstack-nova";
     String internalProviderName = "openstack-nova";
 
     client.controller(Api.class).updateOrCreate(
         new ApiBuilder().name(apiName)
             .internalProviderName(internalProviderName).build());
-{% endhighlight %}
+```            
 
 #### REST
 
-{% highlight json linenos %}
+```json
 {
     "internalProviderName": "openstack-nova",
     "name": "openstack-nova"
 }
-{% endhighlight %}
+```
 
 ### Create Cloud
 
 #### colosseum-client
 
-{% highlight java linenos %}
+```java
 
 Long apiId = 1;
 String endpoint = "https://my-cloud-endpoint.com/example";
@@ -80,23 +80,23 @@ client.controller(Cloud.class).updateOrCreate(
     new CloudBuilder().api(apiId).endpoint(endpoint)
         .name(cloudName).build());
         __
-{% endhighlight %}
+```
 
 #### REST
 
-{% highlight json linenos %}
+```json
 {
     "name": "My Openstack", 
     "endpoint": "https://my-cloud-endpoint.com/example", 
     "api": 1 
 }
-{% endhighlight %}
+```
 
 ### Create CloudCredential
 
 #### colosseum-client
 
-{% highlight java linenos %}
+```java
 
 Long cloudId = 1;
 String username = "MyCloudUsername";
@@ -110,18 +110,18 @@ client.controller(CloudCredential.class).updateOrCreate(
         .tenant(1)
         .build());
         
-{% endhighlight %}
+```
 
 #### REST
 
-{% highlight json linenos %}
+```json
 {
     "user": "MyCloudUsername",
     "secret": "MySecretCloudPassword",
     "cloud": 1,
     "tenant": 1
 }
-{% endhighlight %}
+```
 
 ## Discovery
 

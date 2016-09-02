@@ -55,7 +55,7 @@ Each of these scripts provides the following functions by using the depicted arg
 This script simple provides the logic to run apt-get update and dist-upgrade trying
 its best to avoid any interaction with the user.
 
-{% highlight shell linenos %}
+```shell
 #!/bin/bash
 
 apt_update() {
@@ -66,13 +66,13 @@ export DEBIAN_FRONTEND=noninteractive
 sudo -E apt-get update
 sudo -E apt-get -o Dpkg::Options::="--force-confold" --force-yes -fuy dist-upgrade
 }
-{% endhighlight %}
+```
 
 ### A script installing the haproxy server
 
 This scripts installs and configures the haproxy server.
 
-{% highlight shell linenos %}
+```shell
 #!/bin/bash
 
 MY_DIR="$(dirname "$0")"
@@ -172,11 +172,11 @@ case "$1" in
         echo $"Usage: $0 {install|start|startBlocking|configure|stop}"
         exit 1
 esac
-{% endhighlight %}
+```
 
 ### A script installing apache2 and mediawiki.
 
-{% highlight shell linenos %}
+```shell
 #!/bin/bash
 
 MY_DIR="$(dirname "$0")"
@@ -266,11 +266,11 @@ case "$1" in
         echo $"Usage: $0 {install|start|startBlocking|configure|stop}"
         exit 1
 esac
-{% endhighlight %}
+```
 
 ### A script installing MariaDB.
 
-{% highlight shell linenos %}
+```shell
 #!/bin/bash
 
 MY_DIR="$(dirname "$0")"
@@ -340,7 +340,7 @@ case "$1" in
         echo $"Usage: $0 {install|start|startBlocking|configure|stop}"
         exit 1
 esac
-{% endhighlight %}
+```
 
 ## Selecting the desired cloud resources
 
@@ -406,7 +406,7 @@ and pass them as arguments to the above scripts.
 
 ### HaProxy Bridge Script
 
-{% highlight shell linenos %}
+```shell
 
 #!/bin/bash
 
@@ -438,11 +438,11 @@ case "$1" in
         ./${MY_DIR}/../shell/haproxy.sh $@
 esac
 
-{% endhighlight %}
+```
 
 ### Mediawiki Bridge Script
 
-{% highlight shell linenos %}
+```shell
 
 #!/bin/bash
 
@@ -475,11 +475,11 @@ case "$1" in
         ./${MY_DIR}/../shell/mediawiki.sh $@
 esac
 
-{% endhighlight %}
+```
 
 ### MariaDB Bridge Script
 
-{% highlight shell linenos %}
+```shell
 
 MY_DIR="$(dirname "$0")"
 
@@ -488,7 +488,7 @@ MY_DIR="$(dirname "$0")"
 MY_DIR="$(dirname "$0")"
 ./${MY_DIR}/../shell/mariaDB.sh $@
 
-{% endhighlight %}
+```
 
 ## API Interaction
 
@@ -498,26 +498,26 @@ Finally, we can start creating the entities using the API of Cloudiator.
 
 #### REST
 
-{% highlight json linenos %}
+```json
     {
         "name":"MediawikiApplication"
     }
-{% endhighlight %}
+```
 
 #### colosseum-client
 
-{% highlight java linenos %}
+```java
 
     Application application = client.controller(Application.class)
         .updateOrCreate(new ApplicationBuilder().name("MediawikiApplication").build());
             
-{% endhighlight %}
+```
 
 ### Creating the lifecycle components
 
 #### REST
 
-{% highlight json linenos %}
+```json
     {
         "name": "LoadBalancer",
         "preInstall": "sudo apt-get -y update && sudo apt-get -y install git && git clone https://github.com/dbaur/mediawiki-tutorial.git",
@@ -538,11 +538,11 @@ Finally, we can start creating the entities using the API of Cloudiator.
         "postInstall": "./mediawiki-tutorial/scripts/lance/mariaDB.sh configure",
         "start": "./mediawiki-tutorial/scripts/lance/mariaDB.sh startBlocking"
     }
-{% endhighlight %}
+```
 
 #### colosseum-client
 
-{% highlight java linenos %}
+```java
 
     String downloadCommand =
         "sudo apt-get -y update && sudo apt-get -y install git && git clone https://github.com/dbaur/mediawiki-tutorial.git";
@@ -565,7 +565,7 @@ Finally, we can start creating the entities using the API of Cloudiator.
             .postInstall("./mediawiki-tutorial/scripts/lance/mariaDB.sh configure")
             .start("./mediawiki-tutorial/scripts/lance/mariaDB.sh startBlocking").build());
 
-{% endhighlight %}
+```
 
 ### Creating the virtual machine template
 
@@ -573,13 +573,13 @@ Finally, we can start creating the entities using the API of Cloudiator.
 
 #### colosseum-client
 
-{% highlight java linenos %}
+```java
 
     VirtualMachineTemplate virtualMachineTemplate =  client.controller(VirtualMachineTemplate.class).create(
         new VirtualMachineTemplateBuilder().cloud(cloud.getId()).location(location.getId())
                 .image(image).hardware(hardware.getId()).build());
 
-{% endhighlight %}
+```
 
 ### Creating the application components
 
@@ -587,7 +587,7 @@ Finally, we can start creating the entities using the API of Cloudiator.
 
 #### colosseum-client
 
-{% highlight java linenos %}
+```java
 
     ApplicationComponent loadBalancerApplicationComponent =
         client.controller(ApplicationComponent.class).create(
@@ -607,7 +607,7 @@ Finally, we can start creating the entities using the API of Cloudiator.
                 .component(mariaDB.getId())
                 .virtualMachineTemplate(virtualMachineTemplate.getId()).build());
 
-{% endhighlight %}
+```
 
 ### Creating the ports
 
@@ -615,7 +615,7 @@ Finally, we can start creating the entities using the API of Cloudiator.
 
 #### colosseum-client
 
-{% highlight java linenos %}
+```java
 
     //database
     final PortProvided mariadbprov = client.controller(PortProvided.class).create(
@@ -639,7 +639,7 @@ Finally, we can start creating the entities using the API of Cloudiator.
                 .updateAction("./mediawiki-tutorial/scripts/lance/haproxy.sh configure")
                 .build());
                 
-{% endhighlight %}
+```
 
 ### Creating the communication
 
@@ -647,7 +647,7 @@ Finally, we can start creating the entities using the API of Cloudiator.
 
 #### colosseum-client
 
-{% highlight java linenos %}
+```java
 
     // wiki communicates with database
     final Communication wikiWithDB = client.controller(Communication.class).create(
@@ -658,8 +658,8 @@ Finally, we can start creating the entities using the API of Cloudiator.
         new CommunicationBuilder().providedPort(wikiprov.getId())
             .requiredPort(loadbalancerreqwiki.getId()).build());
 
-{% endhighlight %}
+```
 
 
-[mediawiki_communication]: /images/docs/mediawiki_communication.png
+[mediawiki_communication]: ../images/docs/mediawiki_communication.png
 {: .img-responsive .center-block}

@@ -12,7 +12,7 @@ when changing the configuration file, you need to restart Colosseum for the chan
 
 This new configuration file should at least contain the following information:
 
-{% highlight conf linenos %}
+```conf
 
 include "application.conf"
 
@@ -29,7 +29,7 @@ db.default.url = "mysql://dbuser:dbpassword@dbhost/dbname"
 
 colosseum.nodegroup = "cloudiator-nodegroup"
 
-{% endhighlight %}
+```
 
 | Configuration Option | Description |
 | -------------------- | ----------- |
@@ -68,11 +68,11 @@ A global configuration option can be set in the [Colosseum](/components/colosseu
 The syntax is colosseum.cloud.properties + the [Sword](/components/sword.html) property you want to set. The example
 below globally configures the sword.ec2.ami.query option.
 
-{% highlight conf %}
+```conf
 
 colosseum.cloud.properties.sword.ec2.ami.query = "state=available;image-type=machine;"
 
-{% endhighlight %}
+```
 
 ### Cloud
 
@@ -81,7 +81,7 @@ affect this specific cloud. For this purpose the entity CloudProperty can be use
 
 #### colosseum-client
 
-{% highlight java linenos %}
+```java
 
 Cloud cloud;
 String key = sword.ec2.ami.query;
@@ -91,11 +91,11 @@ client.controller(CloudProperty.class).updateOrCreate(
                     new CloudPropertyBuilder().cloud(cloud.getId()).key(key)
                         .value(value).build());
                         
-{% endhighlight %}
+```
 
 #### REST
 
-{% highlight json linenos %}
+```json
 
 {
     "cloud": 1,
@@ -103,4 +103,4 @@ client.controller(CloudProperty.class).updateOrCreate(
     "value": "state=available;image-type=machine;"
 }
 
-{% endhighlight %}
+```

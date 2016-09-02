@@ -19,7 +19,7 @@ You will need to create a configuration file. A template for the configuration f
 at [Github](https://raw.githubusercontent.com/cloudiator/examples/master/client-examples/config/example.template.properties)
 or copied from below.
 
-{% highlight conf linenos %}
+```conf
  
 # Colosseum Configuration
 colosseum.url = http://{ip-of-colosseum}:9000/api
@@ -69,15 +69,15 @@ myCloud.image.loginName =
 ## A comma seperated list of properties for this cloud
 myCloud.properties =
 
-{% endhighlight %}
+```
 
 ## Running the example
 
 To run the example simply execute:
 
-{% highlight shell %}
+```shell
 java -Dconfig.file=path-to-your-config-file -jar colosseum-example-jar-with-dependencies.jar 
-{% endhighlight %}
+```
 
 The program will automatically exit as soon as the mediawiki installation is running.
 
