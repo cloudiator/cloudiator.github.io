@@ -66,6 +66,10 @@ or direct REST (e.g. by using a client like [Insomnia](https://chrome.google.com
 }
 ```
 
+#### UI
+
+![Creating a Cloud using the web interface][ui_cloud]
+
 ### Create Cloud
 
 #### colosseum-client
@@ -91,6 +95,10 @@ client.controller(Cloud.class).updateOrCreate(
     "api": 1 
 }
 ```
+
+#### UI
+
+![Creating an API using the web interface][ui_api]
 
 ### Create CloudCredential
 
@@ -123,6 +131,10 @@ client.controller(CloudCredential.class).updateOrCreate(
 }
 ```
 
+#### UI
+
+![Creating a Credential using the web interface][ui_credential]
+
 ## Discovery
 
 After having created the above entities, the discovery of colosseum will start
@@ -131,7 +143,14 @@ the cloud provider. You can see the discovered images, when accessing the
 correct API endpoints.
   
  
+[ui_api]: ../images/ui/api.png
+{: .img-responsive}
 
+[ui_cloud]: ../images/ui/cloud.png
+{: .img-responsive}
+
+[ui_credential]: ../images/ui/credential.png
+{: .img-responsive}
 
 
 
