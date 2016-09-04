@@ -567,6 +567,14 @@ Finally, we can start creating the entities using the API of Cloudiator.
 
 ```
 
+#### UI
+
+![Creating the loadbalancer component using the UI][component_lb]
+
+![Creating the wiki component using the UI][component_wiki]
+
+![Creating the database component using the UI][component_db]
+
 ### Creating the virtual machine template
 
 #### REST
@@ -663,3 +671,12 @@ Finally, we can start creating the entities using the API of Cloudiator.
 
 [mediawiki_communication]: ../images/docs/mediawiki_communication.png
 {: .img-responsive .center-block}
+
+[component_db]: ../images/ui/component_db.png
+{: .img-responsive}
+
+[component_lb]: ../images/ui/component_lb.png
+{: .img-responsive}
+
+[component_wiki]: ../images/ui/component_wiki.png
+{: .img-responsive}

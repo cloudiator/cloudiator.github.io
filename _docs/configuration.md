@@ -8,7 +8,11 @@ title: Configuration
 Cloudiator features a central point of configuration: the configuration file of [Colosseum](/components/colosseum.html).
 It contains all default configuration options, that can be overwritten by supplying an addition configuration file using the
 -Dconfig.file parameter when starting Colosseum. While directly changing the file is also possible it is not recommended.
-when changing the configuration file, you need to restart Colosseum for the changes to take effect. 
+
+<div class="alert alert-warning" role="alert">
+<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+When changing the configuration file, you need to restart Colosseum for the changes to take effect. 
+</div>
 
 This new configuration file should at least contain the following information:
 
