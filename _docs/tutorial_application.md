@@ -513,6 +513,10 @@ Finally, we can start creating the entities using the API of Cloudiator.
             
 ```
 
+#### UI
+
+![Creating the Application][application]
+
 ### Creating the lifecycle components
 
 #### REST
@@ -577,7 +581,22 @@ Finally, we can start creating the entities using the API of Cloudiator.
 
 ### Creating the virtual machine template
 
+#### UI
+
+![Creating the virtual machine template][virtualMachineTemplate]
+
 #### REST
+
+```json
+
+{
+  "cloud":1,
+  "image":1,
+  "location":1,
+  "hardware":1
+}
+
+```
 
 #### colosseum-client
 
@@ -591,7 +610,33 @@ Finally, we can start creating the entities using the API of Cloudiator.
 
 ### Creating the application components
 
+#### UI
+
+![Creating the application components][application_component]
+
 #### REST
+
+```json
+
+{  
+   "application":1,
+   "component":1,
+   "virtualMachineTemplate":1
+}
+
+{  
+   "application":1,
+   "component":2,
+   "virtualMachineTemplate":1
+}
+
+{  
+   "application":1,
+   "component":3,
+   "virtualMachineTemplate":1
+}
+
+```
 
 #### colosseum-client
 
@@ -619,7 +664,46 @@ Finally, we can start creating the entities using the API of Cloudiator.
 
 ### Creating the ports
 
+#### UI
+
+See communication.
+
 #### REST
+
+```json
+
+{  
+   "name":"MARIADBPROV",
+   "applicationComponent":1,
+   "port":3306
+}
+
+
+{  
+   "name":"WIKIPROV",
+   "applicationComponent":2,
+   "port":80
+}
+{  
+   "name":"WIKIREQMARIADB",
+   "isMandatory":"true",
+   "applicationComponent":2
+}
+
+
+{  
+   "name":"LBPROV",
+   "applicationComponent":3,
+   "port":80
+}
+{  
+   "name":"LOADBALANCERREQWIKI",
+   "updateAction":"./mediawiki-tutorial/scripts/lance/haproxy.sh configure",
+   "isMandatory":"true",
+   "applicationComponent":3
+}
+
+```
 
 #### colosseum-client
 
@@ -651,7 +735,13 @@ Finally, we can start creating the entities using the API of Cloudiator.
 
 ### Creating the communication
 
+#### UI
+
+![Creating the communication and the ports][communication]
+
 #### REST
+
+
 
 #### colosseum-client
 
@@ -680,3 +770,16 @@ Finally, we can start creating the entities using the API of Cloudiator.
 
 [component_wiki]: ../images/ui/component_wiki.png
 {: .img-responsive}
+
+[application]: ../images/ui/application.png
+{: .img-responsive}
+
+[application_component]: ../images/ui/application_components.png
+{: .img-responsive}
+
+[virtualMachineTemplate]: ../images/ui/virtualMachineTemplate.png
+{: .img-responsive}
+
+[communication]: ../images/ui/communication.png
+{: .img-responsive}
+
