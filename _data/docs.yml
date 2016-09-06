@@ -18,6 +18,9 @@
     - mediawiki
     - tutorial_cloud
     - tutorial_application
+    - tutorial_monitoring
+    - tutorial_scaling
+    - tutorial_instance
     - tutorial_java_code
 
 - title: Help

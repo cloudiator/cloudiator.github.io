@@ -1,3 +1,4 @@
+---
 layout: docs
 title: Starting the application
 ---
