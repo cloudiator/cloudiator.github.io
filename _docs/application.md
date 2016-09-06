@@ -34,18 +34,18 @@ only once and afterwards can reuse it in other applications, e.g. a wiki applica
 
 | Lifecycle Action | Description |
 | --- | --- |
-| preInstall | |
-| install | |
-| postInstall | |
-| start | |
-| startDetection | |
-| stopDetection | |
-| preStart | |
-| postStart | |
-| preStop | |
-| stop | |
-| postStop | |
-| shutdown | |
+| preInstall | Executed before running the installation of the component. Can be used for e.g. downloading the required scripts. |
+| install | Installation action. Should be used for installing the component. |
+| postInstall | Executed after the installation of the component. First lifecycle action where the  |
+| preStart | Preparation for the start. |
+| start | (Mandatory) Start the application. Needs to be blocking for Docker usage and unblocking for Plain usage. |
+| startDetection | Detection of the start. Will be used to check if the application started successfully. |
+| stopDetection | Detects a stop of the application. Used to detect failure of the application. |
+| postStart | Executed after the installation was successfully started. |
+| preStop | Executed shortly before the service is stopped. |
+| stop | Stops the application. |
+| postStop | Executed after the application was stopped. |
+| shutdown | Force-stops the application. |
 {: .table .table-striped .table-responsive}
 
 ## Virtual Machine Template
@@ -88,7 +88,15 @@ variables are depicted in the following table.
 
 | Environment Variable | Description |
 | --- | --- |
-| foo| bar |
+| CONTAINER_IP | the IP address of the container. It should be used for binding purposes |
+| CLOUD_IP | the IP address of the virtual machine running the container. This IP is probably cloud provider-specific and cannot be reached from outside the cloud |
+| PUBLIC_IP | the public IP address of the virtual machine running the container, if available |
+| CONTAINER_{NameOfPort} | the port number as specified in the deployment model and as accessible from within the container. Should be used for binding. |
+| CLOUD_{NameOfProvidedPort} | the port number as accessible from within the cloud |
+| PUBLIC_{NameOfProvidedPort} | the port number as accessible from the outside world (i.e., by using the public IP) |
+| PUBLIC_{NameOfRequiredPort}| provides access to the public IP addresses and public ports of all downstream component instances (comma separated list of ip:port pairs)|
+| CLOUD_{NameOfRequiredPort} | provides access to the cloud-internal IP addresses and cloud-internal ports of all downstream component instances. Note that addresses of component instances not hosted in the same cloud as the local component instance are still in the list, but very likely traffic cannot be routed to them. |
+| CONTAINER_{NameOfRequiredPort} | provides access to the container-internal IP addresses and container-internal ports of all downstream component instances. Note that addresses of component instances not hosted in the very same container as the local component instance are still in the list, but very likely cannot be routed to |
 {: .table .table-striped .table-responsive}
 
 
