@@ -350,11 +350,7 @@ started for the different application components.
 For simplicity reasons, we will use the same combination of image, hardware and 
 location for all application components.
 
-### Selecting the hardware
-
-### Selecting the image
-
-### Selecting the location
+All cloud resources can be retrieved by using the respective list actions.
 
 ### Defining the virtual machine template
 
