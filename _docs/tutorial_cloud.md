@@ -5,7 +5,7 @@ title: Cloud Model
 
 ## Introduction
 
-Before deploying an application within the Cloudiator framework is the definition of
+Before deploying an application within the Cloudiator framework the first step is the definition of
 a Cloud target.
 
 For this purpose, three entities have to be created:
@@ -36,13 +36,16 @@ Logo in the top-left edge. (If this does not exist, you only have one tenant and
 3. Go to the Compute Tab on the left navigation bar.
 4. Click Access & Security.
 5. Click the button Download Openstack RC File.
-6. Open the file in the editor, endpoint maps to OS_AUTH_URL, tenant maps to OS_TENANT_NAME, username maps to
+6. Open the file in the editor: endpoint maps to OS_AUTH_URL, tenant maps to OS_TENANT_NAME, username maps to
 OS_USERNAME and password is most likely the password you also used for dashboard authentication or OS_PASSWORD.
 
 ## API Interaction
 
-Finally, you can start creating the entities in Cloudiator. Throughout the example, we will list two possibilities: Using the [colosseum-client](/components/colosseum-client.html)
-or direct REST (e.g. by using a client like [Insomnia](https://chrome.google.com/webstore/detail/insomnia-rest-client/gmodihnfibbjdecbanmpmbmeffnmloel)).
+Finally, you can start creating the entities in Cloudiator. Throughout the example, we will list three possibilities: Using the [colosseum-client](/components/colosseum-client.html)
+, direct REST (e.g. by using a client like [Insomnia](https://chrome.google.com/webstore/detail/insomnia-rest-client/gmodihnfibbjdecbanmpmbmeffnmloel)) or
+the [user interface](/components/ui.html).
+
+Before starting you may want to read the basic guide about API authentication and the guides about the respective components.
 
 ### Create API
 
@@ -139,8 +142,8 @@ client.controller(CloudCredential.class).updateOrCreate(
 
 After having created the above entities, the discovery of colosseum will start
 running, importing the various offers (Images, Hardware and Locations) of
-the cloud provider. You can see the discovered images, when accessing the
-correct API endpoints.
+the cloud provider. You can see the discovered entities, when accessing the
+corresponding API endpoints.
   
  
 [ui_api]: ../images/ui/api.png

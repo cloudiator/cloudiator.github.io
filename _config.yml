@@ -11,8 +11,8 @@ sass:
 
 name: Cloudiator
 description: A multi-tenant, cross-cloud orchestration framework.
-url: https://cloudiator.github.io
-# url: http://localhost:4000
+# url: https://cloudiator.github.io
+url: http://localhost:4000
 
 favicon: /images/favicon.png
 logo: /images/logo.png
@@ -25,6 +25,8 @@ collections:
   docs:
     output: true
   components:
+    output: true
+  api:
     output: true
 
 google_site_verification: 1_UKbWPLg8mXzsfaB0OSRpLVp2vqfJ3DNdGSisGQ4o8

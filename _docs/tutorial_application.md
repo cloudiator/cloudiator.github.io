@@ -13,6 +13,7 @@ For this step the following information is needed:
     2. the image used for booting the virtual machine.
     3. the hardware used for booting the virtual machine.
     4. the location used for booting the virtual machine.
+2. The communication dependencies.
     
 A more detailed description for the application model is given in the
 corresponding [Documentation Section](/docs/application.html).
@@ -28,8 +29,8 @@ general we need three scripts:
 
 For each script we define two start actions:
 
-- one blocking the start as required by Lance's Docker deployment
-- one non-blocking start action as required by Lance's plain deployment.
+- one blocking the start as required by [Lance's](/components/lance.html) Docker deployment
+- one non-blocking start action as required by [Lance's](/components/lance.html) plain deployment.
 
 In addition we define the following arguments:
 
@@ -37,7 +38,7 @@ In addition we define the following arguments:
 - the load balancer scripts takes multiple application server ip's as argument.
 
 This leads to the following scripts, also available at [Github](https://github.com/dbaur/mediawiki-tutorial/tree/master/scripts/shell). 
-This scripts rely on apt-get to install packages, and were only tested on Ubuntu 14.04 LTS.
+These scripts rely on apt-get to install packages, and were only tested on Ubuntu 14.04 LTS.
 
 Each of these scripts provides the following functions by using the depicted arguments:
 
@@ -50,9 +51,9 @@ Each of these scripts provides the following functions by using the depicted arg
 | stop | Stops the application |
 {: .table .table-striped .table-responsive}
 
-### A utility scripts for common operations
+### An utility script for common operations
 
-This script simple provides the logic to run apt-get update and dist-upgrade trying
+This script simply provides the logic to run apt-get update and dist-upgrade while trying
 its best to avoid any interaction with the user.
 
 ```shell
@@ -397,7 +398,7 @@ Cloudiator uses environment variables to provide IP addresses of downstream comp
 fact, we have to write a simple bridge script parsing this information and calling the corresponding scripts 
 with the correct arguments. These scripts can also be found on [Github](https://github.com/dbaur/mediawiki-tutorial/tree/master/scripts/lance).
 
-The corresponding just forward the main argument (see table above) to the original script, but in addition parse the environment variables if necessary
+The corresponding bridge scripts just forward the main argument (see table above) to the original script, but in addition parse the environment variables if necessary
 and pass them as arguments to the above scripts.
 
 ### HaProxy Bridge Script
