@@ -1,29 +1,26 @@
-﻿---
-layout: docs
-title: API
 ---
-
-# API Actions
-***
+layout: docs
+title: Api
+endpoint: /api/api
+---
 
 ## Description
 
 The API entity represents an API type (like aws-ec2 or openstack-nova) supported by the system.
-***
 
 ## GET /api/api
 
-###Description
+### Description
 Returns a list of API types supported by the system.
 
-###Request Parameters
+### Request Parameters
 None
 
-###Response
+### Response
 A list of all api entities stored in the database.
 
-###Response Example
-```
+### Response Example
+```json
 [
    {
       "links":[
@@ -47,26 +44,31 @@ A list of all api entities stored in the database.
    }
 ]
 ```
-###Response Codes
+
+### Response Codes
+
 **Normal Response Code** 200
 
 **Error Response Code** 500 (server error), 403 (forbidden), 401 (unauthorized)
-***
+
 ## GET /api/api/{api_id}
 
-###Description
+### Description
 Returns the API type identified by the given {api_id}.
 
-###Request Parameters
+### Request Parameters
+
 Parameter     | Description
 ------------- | -------------
 api_id        | The id of the api.
+{: .table .table-striped .table-responsive}
 
-###Response
+### Response
 The API entity identified by the given id.
 
-###Response Example
-```
+### Response Example
+
+```json
 {
    "links":[
       {
@@ -78,80 +80,98 @@ The API entity identified by the given id.
    "internalProviderName":"aws-ec2"
 }
 ```
-###Response Codes
+
+### Response Codes
 **Normal Response Code** 200
 
 **Error Response Code** 500 (server error), 403 (forbidden), 401 (unauthorized), 404 (not found)
-***
+
 ## POST /api/api
 
-###Description
+### Description
 Creates a new API entity. The new entity will be returned.
 
-###Request Parameters
+### Request Parameters
+
 Parameter            | Description
 -------------------- | ------------------------------------
 name                 | The name of the api.
 internalProviderName | The internal name of the provider.
+{: .table .table-striped .table-responsive}
 
-###Request Example
-```
+### Request Example
+```json
 {
     "name":"openstack-nova",
     "internalProviderName":"openstack-nova"
 }
 ```
-###Response 
+
+### Response 
 The created entity. See GET /api/api/{api_id}
-###Response Codes
+
+### Response Codes
+
 **Normal Response Code** 200
 
 **Error Response Code** 500 (server error), 403 (forbidden), 401 (unauthorized), 400 (bad request)
-***
+
 ## PUT /api/api/{api_id}
 
-###Description
+### Description
+
 Updates the API type identified by the given id.
 
-###Request Parameters
+### Request Parameters
+
 Parameter            | Description
 -------------------- | -------------
 api_id               | The id of the api to update.
 name                 | The name of the API.
 internalProviderName | The internal name of the provider.
+{: .table .table-striped .table-responsive}
 
-###Request Example
+### Request Example
+
 ```
 PUT /api/api/1
 ```
-```
+```json
 {
     "name":"openstack-nova",
     "internalProviderName":"openstack-nova"
 }
 ```
-###Response
+
+### Response
+
 The updated entity. See GET /api/api/{api_id}
 
-###Response Codes
+### Response Codes
+
 **Normal Response Code** 200
 
 **Error Response Code** 500 (server error), 403 (forbidden), 401 (unauthorized), 404 (not found), 400 (bad request)
-***
+
 ## DELETE /api/api/{api_id}
 
-###Description
+### Description
+
 Deletes the API entity identified by the given {api_id}.
 
-###Request Parameters
+### Request Parameters
+
 Parameter     | Description
 ------------- | -------------
 api_id        | The id of the api to delete.
+{: .table .table-striped .table-responsive}
 
-###Response
+### Response
+
 No data.
 
-###Response Codes
+### Response Codes
+
 **Normal Response Code** 200
 
 **Error Response Code** 500 (server error), 403 (forbidden), 401 (unauthorized), 404 (not found)
