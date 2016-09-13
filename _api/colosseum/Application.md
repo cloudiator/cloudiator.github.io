@@ -1,4 +1,9 @@
-﻿# Application Actions
+﻿---
+layout: docs
+title: API
+---
+
+# Application Actions
 ***
 
 ## Description

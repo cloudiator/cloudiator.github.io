@@ -1,4 +1,9 @@
-﻿# API Actions
+﻿---
+layout: docs
+title: API
+---
+
+# API Actions
 ***
 
 ## Description

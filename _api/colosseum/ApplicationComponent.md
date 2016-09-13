@@ -1,4 +1,9 @@
-﻿# ApplicationComponent Actions
+﻿---
+layout: docs
+title: API
+---
+
+# ApplicationComponent Actions
 ***
 
 ## Description
