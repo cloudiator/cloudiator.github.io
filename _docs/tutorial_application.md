@@ -9,14 +9,14 @@ After the description of the cloud, we can start to model the application.
 For this step the following information is needed:
 
 1. For each component of the application:
-    1. a script used for installing the component on the virtual machine.
+    1. a script used for installing and starting the component on the virtual machine.
     2. the image used for booting the virtual machine.
     3. the hardware used for booting the virtual machine.
     4. the location used for booting the virtual machine.
 2. The communication dependencies.
     
 A more detailed description for the application model is given in the
-corresponding [Documentation Section](/docs/application.html).
+corresponding [Documentation Section]({{site.url}}/docs/application.html).
     
 ## Writing the application scripts
 
@@ -29,26 +29,26 @@ general we need three scripts:
 
 For each script we define two start actions:
 
-- one blocking the start as required by [Lance's](/components/lance.html) Docker deployment
-- one non-blocking start action as required by [Lance's](/components/lance.html) plain deployment.
+- one blocking the start as required by [Lance's]({{site.url}}/components/lance.html) Docker deployment
+- one non-blocking start action as required by [Lance's]({{site.url}}/components/lance.html) plain deployment.
 
-In addition we define the following arguments:
+In addition we define the following arguments for the scripts:
 
-- the application server installation scripts takes a database ip as argument.
-- the load balancer scripts takes multiple application server ip's as argument.
+- the application server installation scripts takes the database ip as argument.
+- the load balancer scripts takes multiple application server ips as argument.
 
 This leads to the following scripts, also available at [Github](https://github.com/dbaur/mediawiki-tutorial/tree/master/scripts/shell). 
 These scripts rely on apt-get to install packages, and were only tested on Ubuntu 14.04 LTS.
 
-Each of these scripts provides the following functions by using the depicted arguments:
+Each of these scripts provides the following functions when used with the depicted arguments:
 
 |Argument|Description|
 | --- | --- |
-| install | Installs the application on the server |
-| start | Starts the application (non-blocking) |
-| startBlocking | Start the application (blocking) |
-| configure | Configures the application, e.g. by downloading or writing configuration files |
-| stop | Stops the application |
+| install | Installs the application on the server. |
+| start | Starts the application (non-blocking). |
+| startBlocking | Starts the application (blocking). |
+| configure | Configures the application, e.g. by downloading or writing configuration files. |
+| stop | Stops the application. |
 {: .table .table-striped .table-responsive}
 
 ### An utility script for common operations
@@ -351,12 +351,12 @@ started for the different application components.
 For simplicity reasons, we will use the same combination of image, hardware and 
 location for all application components.
 
-All cloud resources can be retrieved by using the respective list actions.
+All cloud resources can be retrieved by using the respective list actions of [Colosseum's API]({{site.url}}/api/colosseum.html).
 
 ### Defining the virtual machine template
 
 Once we have selected the desired cloud resources, creating a virtual machine template is straightforward. As
-all component's are going to use the same, we will create only one using the foreign keys of the respective resources.  
+all components are going to use the same template, we will create only one using the foreign keys of the respective resources.  
 
 ## Defining the components, the application component and the application
 
@@ -386,20 +386,20 @@ Required Ports:
     - The wiki requires the database.
 Communication:
     - LOADBALANCERREQWIKI: link between the HaProxy and the webserver.
-    - WIKIREQMARIADB: link between the webserver and the database.
+    - WIKIREQMARIADB: link between the web-server and the database.
     
 It is important to remember the name of the communication entities, as the
-environment variables later used in the script rely on them.
+environment variables used in the script rely on them.
 
 ## Linking the scripts to Cloudiator
 
-As explained in the communication section of the [application model documentation](/docs/application.html)
+As explained in the communication section of the [application model documentation]({{site.url}}/docs/application.html)
 Cloudiator uses environment variables to provide IP addresses of downstream components. To account for this
 fact, we have to write a simple bridge script parsing this information and calling the corresponding scripts 
 with the correct arguments. These scripts can also be found on [Github](https://github.com/dbaur/mediawiki-tutorial/tree/master/scripts/lance).
 
-The corresponding bridge scripts just forward the main argument (see table above) to the original script, but in addition parse the environment variables if necessary
-and pass them as arguments to the above scripts.
+The corresponding bridge scripts just forward the main argument (see table above) to the original script, but in addition parses the environment variables if necessary
+and sends them as arguments to the above scripts.
 
 ### HaProxy Bridge Script
 
