@@ -9,7 +9,7 @@ After the description of the cloud, we can start to model the application.
 For this step the following information is needed.
 
 1. For each component, i.e. a _LifecycleComponent_, of the application you need:
-    1. a script used for _install_ ing and _start_ ing the component on the virtual machine.
+    1. a script used for _install_~ing and _start_~ing the component on the virtual machine.
     2. the _Image_ used for booting the virtual machine.
     3. the _Hardware_ used for booting the virtual machine.
     4. the _Location_ used for booting the virtual machine.
