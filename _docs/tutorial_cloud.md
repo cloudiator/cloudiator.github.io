@@ -5,8 +5,8 @@ title: Cloud Model
 
 ## Introduction
 
-Before deploying an application within the Cloudiator framework the first step is the definition of
-a Cloud target.
+Before deploying an application with the Cloudiator framework the first step is the definition of
+a cloud target.
 
 For this purpose, three entities have to be created:
 
@@ -16,34 +16,34 @@ For this purpose, three entities have to be created:
 
 ## Openstack Example
 
-In this example we will create the required entities, using an Openstack Cloud.
+In this example we will create the required entities using an Openstack Cloud.
 
-For this purpose, you will need the following information for your Openstack Cloud.
+For this purpose, we will need the following information for your Openstack Cloud.
 
 1. The endpoint of the Openstack Cloud.
 2. Your tenant name.
 3. Your username.
 4. Your API Password.
 
-For other cloud providers, you can have a look at the [examples section](/components/sword.html) of Sword. The code examples
-list the information required for those Providers.
+For other cloud providers, you can have a look at the [examples section]({{site.url}}/components/sword.html) of Sword. The code examples
+list the information required for those providers.
 
-You can easily retrieve this information from the Openstack Dashboard:
+You can easily retrieve this information from the Openstack dashboard:
 
 1. Login 
 2. Select the correct tenant from the tenant dropdown menu near the Openstack
-Logo in the top-left edge. (If this does not exist, you only have one tenant and you can skip this step)
-3. Go to the Compute Tab on the left navigation bar.
+logo in the top-left edge. (If it does not exist, you only have one tenant and you can skip this step)
+3. Go to the "Compute" tab on the left navigation bar.
 4. Click Access & Security.
-5. Click the button Download Openstack RC File.
+5. Click the button "Download Openstack RC File".
 6. Open the file in the editor: endpoint maps to OS_AUTH_URL, tenant maps to OS_TENANT_NAME, username maps to
 OS_USERNAME and password is most likely the password you also used for dashboard authentication or OS_PASSWORD.
 
 ## API Interaction
 
-Finally, you can start creating the entities in Cloudiator. Throughout the example, we will list three possibilities: Using the [colosseum-client](/components/colosseum-client.html)
+Finally, you can start creating the entities in Cloudiator. Throughout the example, we will list three possibilities: Using the [colosseum-client]({{site.url}}/components/colosseum-client.html)
 , direct REST (e.g. by using a client like [Insomnia](https://chrome.google.com/webstore/detail/insomnia-rest-client/gmodihnfibbjdecbanmpmbmeffnmloel)) or
-the [user interface](/components/ui.html).
+the [user interface]({{site.url}}/components/ui.html).
 
 Before starting you may want to read the basic guide about API authentication and the guides about the respective components.
 
@@ -140,8 +140,8 @@ client.controller(CloudCredential.class).updateOrCreate(
 
 ## Discovery
 
-After having created the above entities, the discovery of colosseum will start
-running, importing the various offers (Images, Hardware and Locations) of
+After having created the above entities, the discovery of colosseum will start, 
+importing the various offers (Images, Hardware and Locations) of
 the cloud provider. You can see the discovered entities, when accessing the
 corresponding API endpoints.
   
