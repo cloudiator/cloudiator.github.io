@@ -10,9 +10,9 @@ a cloud target.
 
 For this purpose, three entities have to be created:
 
-1. An Api, depicting the programming interface the cloud uses, e.g. Nova in case of Openstack.
-2. A Cloud, depicting the endpoint where the API of the cloud is reachable.
-3. A CloudCredential, depicting the user credentials for the given cloud endpoint.
+1. An _Api_, depicting the programming interface the cloud uses, e.g. Nova in case of Openstack.
+2. A _Cloud_, depicting the endpoint where the API of the cloud is reachable.
+3. A _CloudCredential_, depicting the user credentials for the given cloud endpoint.
 
 ## Openstack Example
 
