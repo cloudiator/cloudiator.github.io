@@ -1,23 +1,31 @@
-﻿# Cloud Actions
-***
+---
+layout: docs
+title: Cloud Property
+endpoint: /api/cloudProperty
+---
 
-##Description
+## Description
+
 The cloud property entity represents a property for a specific cloud. This could be e.g.
 the public ip pool or the network name in Openstack.
 
 ## GET /api/cloudProperty
 
-###Description
+### Description
+
 Returns a list of Cloud types supported by the system.
 
-###Request Parameters
+### Request Parameters
+
 None
 
-###Response
+### Response
+
 A list of all cloud properties stored in the system.
 
-###Response Example
-```
+### Response Example
+
+```json
 [
    {
       "links":[
@@ -44,31 +52,31 @@ A list of all cloud properties stored in the system.
 ]
 ```
 
-###Response Codes
+### Response Codes
 
 **Normal Response Code** 200
 
 **Error Response Code** 500 (server error), 403 (forbidden), 401 (unauthorized)
 
-***
-
 ## GET /api/cloudProperty/{cloudProperty_id}
 
-###Description
+### Description
 
 Returns the cloud property entity identified by the given {cloudProperty_id}.
 
-###Request Parameters
+### Request Parameters
 
 Parameter     | Description
 ------------- | -------------
 cloudProperty_id      | The id of the cloud property.
+{: .table .table-striped .table-responsive}
 
-###Response 
+### Response 
+
 The cloud property entity identified by the given id.
 
-###Response Example
-```
+### Response Example
+```json
 {
       "links":[
          {
@@ -82,29 +90,30 @@ The cloud property entity identified by the given id.
 }
 ```
 
-###Response Codes
+### Response Codes
 
 **Normal Response Code** 200
 
 **Error Response Code** 500 (server error), 403 (forbidden), 401 (unauthorized), 404 (not found)
 
-***
-
 ## POST /api/cloudProperty
 
-###Description
+### Description
 
 Creates a new cloud property entity. The new entity will be returned.
 
-###Request Parameters
+### Request Parameters
+
 Parameter     | Description
 ------------- | -------------
 key           | The key of the property.
 value         | The value of the property.
 cloud         | Relation to the cloud.
+{: .table .table-striped .table-responsive}
 
-###Request Example
-```
+### Request Example
+
+```json
 {  
     "key":"openstack.floating.ip.pool",
     "value":"public",
@@ -112,25 +121,23 @@ cloud         | Relation to the cloud.
 }
 ```
 
-##Response
+## Response
 
 The created entity. See GET /api/cloudProperty/{cloudProperty_id}
 
-###Response Codes
+### Response Codes
 
 **Normal Response Code** 200
 
 **Error Response Code** 500 (server error), 403 (forbidden), 401 (unauthorized), 400 (bad request)
 
-***
-
 ## PUT /api/cloudProperty/{cloudProperty_id}
 
-###Description
+### Description
 
 Updates the cloud property entity identified by the given id.
 
-**Request Parameters** 
+### Request Parameters
 
 Parameter     | Description
 ------------- | -------------
@@ -138,12 +145,14 @@ cloudProperty_id      | The id of the cloud property.
 key           | The key of the property.
 value         | The value of the property.
 cloud         | Relation to the cloud.
+{: .table .table-striped .table-responsive}
 
-###Request Example
+### Request Example
+
 ```
 PUT /api/cloudProperty/1
 ```
-```
+```json
 {  
     "key":"openstack.floating.ip.pool",
     "value":"public",
@@ -151,36 +160,36 @@ PUT /api/cloudProperty/1
 }
 ```
 
-###Response
+### Response
 
 The updated entity. See GET /api/cloudProperty/{cloudProperty_id}
 
-###Response Codes
+### Response Codes
 
 **Normal Response Code** 200
 
 **Error Response Code** 500 (server error), 403 (forbidden), 401 (unauthorized), 404 (not found), 400 (bad request)
 
-***
-
 ## DELETE /api/cloud/{cloudProperty_id}
 
-###Description
+### Description
 
 Deletes the cloud property entity identified by the given {cloudProperty_id}.
 
-###Request Parameters
+### Request Parameters
 
 Parameter     | Description
 ------------- | -------------
 cloudProperty_id      | The id of the cloud property.
+{: .table .table-striped .table-responsive}
 
-###Response
+### Response
 
 No data.
 
-###Response Codes
+### Response Codes
 
 **Normal Response Code** 200
 
 **Error Response Code** 500 (server error), 403 (forbidden), 401 (unauthorized), 404 (not found)
+

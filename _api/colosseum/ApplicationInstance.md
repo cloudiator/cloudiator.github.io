@@ -1,26 +1,32 @@
-﻿# ApplicationInstance Actions
-***
+---
+layout: docs
+title: Application Instance
+endpoint: /api/applicationInstance
+---
 
 ## Description
 
 An application instance represents an instance of application. It groups all instances
 of the components of the related applications. Therefore it allows multiple instances of
 an application at the same time.
-***
 
 ## GET /api/applicationComponent
 
 ### Description
+
 Returns a list of all application instances.
 
 ### Request Parameters
+
 None
 
 ### Response
+
 A list of all application instances entities stored in the database.
 
 ### Response Example
-```
+
+```json
 [
    {
       "links":[
@@ -42,15 +48,17 @@ A list of all application instances entities stored in the database.
    }
 ]
 ```
+
 ### Response Codes
 
 **Normal Response Code** 200
 
 **Error Response Code** 500 (server error), 403 (forbidden), 401 (unauthorized)
-***
+
 ## GET /api/applicationInstance/{applicationInstance_id}
 
 ### Description
+
 Returns the application instance entity identified by the given {applicationInstance_id}.
 
 ### Request Parameters
@@ -58,13 +66,14 @@ Returns the application instance entity identified by the given {applicationInst
 Parameter                  | Description
 -------------              | -------------
 applicationInstance_id     | The id of the application instance.
-
+{: .table .table-striped .table-responsive}
 
 ### Response
 Shows the selected application instance entity.
 
 ### Response Example
-```
+
+```json
 {
    "links":[
       {
@@ -81,10 +90,11 @@ Shows the selected application instance entity.
 **Normal Response Code** 200
 
 **Error Response Code** 500 (server error), 403 (forbidden), 401 (unauthorized), 404 (not found)
-***
+
 ## POST /api/applicationInstance
 
 ### Description
+
 Creates a new application instance entity. The new entity will be returned.
 
 ### Request Parameters
@@ -92,14 +102,18 @@ Creates a new application instance entity. The new entity will be returned.
 Parameter                | Description
 -------------            | -------------
 application              | The associated application.
+{: .table .table-striped .table-responsive}
 
 ### Request Example
-```
+
+```json
 {  
-   "application":1
+   "application": 1
 }
 ```
+
 ### Response
+
 The created entity. See GET /api/applicationInstance/{applicationInstance_id}
 
 ### Response Codes
@@ -107,8 +121,6 @@ The created entity. See GET /api/applicationInstance/{applicationInstance_id}
 **Normal Response Code** 200
 
 **Error Response Code** 500 (server error), 403 (forbidden), 401 (unauthorized), 400 (bad request)
-
-***
 
 ## PUT /api/applicationInstance/{applicationInstance_id}
 
@@ -121,25 +133,27 @@ Parameter                | Description
 -------------            | -------------
 applicationInstance _id  | The id of the application instance to update.
 application              | The associated application.
+{: .table .table-striped .table-responsive}
 
 ### Request Example
 ```
 PUT /api/applicationInstance/1
 ```
-```
+```json
 {  
-   "application":1
+   "application": 1
 }
 ```
+
 ### Response
+
 The updated entity. See GET /api/applicationComponent/{applicationComponent_id}
 
-###Response Codes
+### Response Codes
+
 **Normal Response Code** 200
 
 **Error Response Code** 500 (server error), 403 (forbidden), 401 (unauthorized), 404 (not found), 400 (bad request)
-
-***
 
 ## DELETE /api/applicationInstance/{applicationInstance_id}
 
@@ -151,6 +165,7 @@ Deletes the application instance entity identified by the given {applicationInst
 Parameter               | Description
 -------------           | -------------
 applicationInstance_id  | The id of the applicationInstance to delete.
+{: .table .table-striped .table-responsive}
 
 ### Response Codes
 

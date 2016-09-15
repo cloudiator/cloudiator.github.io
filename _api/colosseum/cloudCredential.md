@@ -1,28 +1,30 @@
-﻿# Credential Actions
-***
+---
+layout: docs
+title: Cloud Credential
+endpoint: /api/cloudCredential
+---
 
-###Description
+## Description
 
 The CloudCredential entity represents the user account for a specified cloud.
 
-***
-
 ## GET /api/cloudCredential
 
-###Description
+### Description
 
 Returns a list of Credential entities stored in the system.
 
-###Request Parameters
+### Request Parameters
+
 None
 
-###Response
+### Response
 
 A list of all Credential entities stored in the database.
 
-###Response Example
+### Response Example
 
-```
+```json
 [  
    {  
       "links":[  
@@ -51,33 +53,32 @@ A list of all Credential entities stored in the database.
 ]
 ```
 
-###Response Codes
+### Response Codes
 
 **Normal Response Code** 200
 
 **Error Response Code** 500 (server error), 403 (forbidden), 401 (unauthorized)
 
-***
-
 ## GET /api/cloudCredential/{cloudCredential_id}
 
-####Description
+### Description
 
 Returns the Credential entity identified by the given {credential_id}.
 
-###Request Parameters
+### Request Parameters
 
 Parameter           | Description
 ------------------  | -------------
 cloudCredential_id  | The id of the credential.
+{: .table .table-striped .table-responsive}
 
-###Response
+### Response
 
 The Credential entity identified by the given id.
 
-###Response Example
+### Response Example
 
-```
+```json
 {  
    "links":[  
       {  
@@ -90,22 +91,19 @@ The Credential entity identified by the given id.
 }
 ```
 
-###Response Codes
+### Response Codes
 
 **Normal Response Code** 200
 
 **Error Response Code** 500 (server error), 403 (forbidden), 401 (unauthorized), 404 (not found)
 
-
-***
-
 ## POST /api/cloudCredential
 
-###Description
+### Description
 
 Creates a new Credential entity. The new entity will be returned.
 
-###Request Parameters
+### Request Parameters
 
 Parameter         | Description
 ----------------- | --------------
@@ -113,10 +111,11 @@ user              | The username.
 secret            | The password.
 cloud             | The cloud the credential belongs to.
 tenant | The frontend group that has access to it.
+{: .table .table-striped .table-responsive}
 
-###Request Example
+### Request Example
 
-```
+```json
 {  
    "user":"john",
    "secret":"secret",
@@ -125,25 +124,23 @@ tenant | The frontend group that has access to it.
 }
 ```
 
-###Response
+### Response
 
 The created entity. See GET /api/cloudCredential/{cloudCredential_id}
 
-###Response Codes
+### Response Codes
 
 **Normal Response Code** 200
 
 **Error Response Code** 500 (server error), 403 (forbidden), 401 (unauthorized), 400 (bad request)
 
-***
-
 ## PUT /api/cloudCredential/{cloudCredential_id}
 
-###Description
+### Description
 
 Updates the Credential entity identified by the given id.
 
-###Request Parameters 
+### Request Parameters 
 
 Parameter           | Description
 ------------------- | -------------
@@ -152,48 +149,49 @@ user                | The username.
 secret              | The password.
 cloud               | The cloud the credential belongs to.
 tenant   | The frontend group that has access to it.
+{: .table .table-striped .table-responsive}
 
-###Request Example
-
-PUT /api/cloudCredential/1
-
+### Request Example
 ```
+PUT /api/cloudCredential/1
+```
+```json
 {  
    "user":"john",
    "secret":"secret",
    "cloud":1,
    "tenant":1
 }
+```
 
-###Response
+### Response
 
 The updated entity. See GET /api/cloudCredential/{cloudCredential_id}
 
-###Response Codes
+### Response Codes
 
 **Normal Response Code** 200
 
 **Error Response Code** 500 (server error), 403 (forbidden), 401 (unauthorized), 404 (not found), 400 (bad request)
 
-***
-
 ## DELETE /api/cloudCredential/{cloudCredential_id}
 
-###Description
+### Description
 
 Deletes the Credential entity identified by the given {cloudCredential_id}.
 
-###Request Parameters
+### Request Parameters
 
 Parameter           | Description
 ------------------- | -------------
 cloudCredential_id  | The id of the credential to delete.
+{: .table .table-striped .table-responsive}
 
+### Response
 
-###Response
 No data.
 
-###Response Codes
+### Response Codes
 
 **Normal Response Code** 200
 

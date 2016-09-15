@@ -1,22 +1,30 @@
-﻿# Cloud Actions
-***
+---
+layout: docs
+title: Cloud
+endpoint: /api/cloud
+---
 
-##Description
+## Description
+
 The Cloud entity represents possible cloud providers like amazon or flexiant.
 
 ## GET /api/cloud
 
-###Description
+### Description
+
 Returns a list of Cloud types supported by the system.
 
-###Request Parameters
+### Request Parameters
+
 None
 
-###Response
+### Response
+
 A list of all cloud entities stored in the database.
 
-###Response Example
-```
+### Response Example
+
+```json
 [
    {
       "links":[
@@ -43,31 +51,32 @@ A list of all cloud entities stored in the database.
 ]
 ```
 
-###Response Codes
+### Response Codes
 
 **Normal Response Code** 200
 
 **Error Response Code** 500 (server error), 403 (forbidden), 401 (unauthorized)
 
-***
-
 ## GET /api/cloud/{cloud_id}
 
-###Description
+### Description
 
 Returns the Cloud entity identified by the given {cloud_id}.
 
-###Request Parameters
+### Request Parameters
 
 Parameter     | Description
 ------------- | -------------
 cloud_id      | The id of the cloud.
+{: .table .table-striped .table-responsive}
 
-###Response 
+### Response 
+
 The Cloud entity identified by the given id.
 
-###Response Example
-```
+### Response Example
+
+```json
 {  
    "links":[  
       {  
@@ -81,28 +90,29 @@ The Cloud entity identified by the given id.
 }
 ```
 
-###Response Codes
+### Response Codes
 
 **Normal Response Code** 200
 
 **Error Response Code** 500 (server error), 403 (forbidden), 401 (unauthorized), 404 (not found)
 
-***
-
 ## POST /api/cloud
 
-###Description
+### Description
 
 Creates a new Cloud entity. The new entity will be returned.
 
-###Request Parameters
+### Request Parameters
+
 Parameter     | Description
 ------------- | -------------
 name          | The name of the cloud.
 endpoint      | The endpoint of the api
 api           | The api used for requests to this clouds.
+{: .table .table-striped .table-responsive}
 
-###Request Example
+### Request Example
+
 ```
 {  
    "name":"amazon",
@@ -111,7 +121,7 @@ api           | The api used for requests to this clouds.
 }
 ```
 
-###Response Codes
+### Response Codes
 
 **Response** No data.
 
@@ -119,27 +129,27 @@ api           | The api used for requests to this clouds.
 
 **Error Response Code** 500 (server error), 403 (forbidden), 401 (unauthorized), 400 (bad request)
 
-***
-
 ## PUT /api/cloud/{cloud_id}
 
-###Description
+### Description
 
 Updates the Cloud entity identified by the given id.
 
-**Request Parameters** 
+### Request Parameters
 
 Parameter     | Description
 ------------- | -------------
 cloud_id      | The id of the cloud to update.
 endpoint      | The endpoint of the api
 api           | The api used for requests to this clouds.
+{: .table .table-striped .table-responsive}
 
-###Request Example
+### Request Example
+
 ```
 PUT /api/cloud/1
 ```
-```
+```json
 {  
    "name":"Flexiant",
    "endpoint":"https://amazon.de:9696",
@@ -147,34 +157,33 @@ PUT /api/cloud/1
 }
 ```
 
-###Response
+### Response
 
 The updated entity. See GET /api/cloud/{cloud_id}
 
-###Response Codes
+### Response Codes
 
 **Normal Response Code** 200
 
 **Error Response Code** 500 (server error), 403 (forbidden), 401 (unauthorized), 404 (not found), 400 (bad request)
 
-***
-
 ## DELETE /api/cloud/{cloud_id}
 
-###Description
+### Description
 
 Deletes the Cloud entity identified by the given {cloud_id}.
 
-###Request Parameters
+### Request Parameters
 
 Parameter     | Description
 ------------- | -------------
 cloud_id      | The id of the cloud to delete.
+{: .table .table-striped .table-responsive}
 
-###Response
+### Response
 No data.
 
-###Response Codes
+### Response Codes
 
 **Normal Response Code** 200
 

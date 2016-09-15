@@ -1,22 +1,30 @@
-﻿# ComponentHorizontalInScalingAction Actions
-***
+---
+layout: docs
+title: Component Horizontal In Scaling Action
+endpoint: /api/componentHorizontalInScalingAction
+---
 
-##Description
+## Description
+
 The ComponentHorizontalInScalingAction entity represents the scaling action.
 
 ## GET /api/componentHorizontalInScalingAction
 
-###Description
+### Description
+
 Returns a list of ComponentHorizontalInScalingAction types supported by the system.
 
-###Request Parameters
+### Request Parameters
+
 None
 
-###Response
+### Response
+
 A list of all ComponentHorizontalInScalingAction entities stored in the database.
 
 ###Response Example
-```
+
+```json
 [
     {
         "externalReferences":[
@@ -37,31 +45,30 @@ A list of all ComponentHorizontalInScalingAction entities stored in the database
 ]
 ```
 
-###Response Codes
+### Response Codes
 
 **Normal Response Code** 200
 
 **Error Response Code** 500 (server error), 403 (forbidden), 401 (unauthorized)
 
-***
-
 ## GET /api/componentHorizontalInScalingAction/{id}
 
-###Description
+### Description
 
 Returns the ComponentHorizontalInScalingAction entity identified by the given {id}.
 
-###Request Parameters
+### Request Parameters
 
 Parameter     | Description
 ------------- | -------------
 id      | The id of the ComponentHorizontalInScalingAction.
+{: .table .table-striped .table-responsive}
 
-###Response 
+### Response 
 The ComponentHorizontalInScalingAction entity identified by the given id.
 
-###Response Example
-```
+### Response Example
+```json
 {
     "externalReferences":[
         "some_external_reference"
@@ -80,21 +87,20 @@ The ComponentHorizontalInScalingAction entity identified by the given id.
 }
 ```
 
-###Response Codes
+### Response Codes
 
 **Normal Response Code** 200
 
 **Error Response Code** 500 (server error), 403 (forbidden), 401 (unauthorized), 404 (not found)
 
-***
-
 ## POST /api/componentHorizontalInScalingAction
 
-###Description
+### Description
 
 Creates a new ComponentHorizontalInScalingAction entity. The new entity will be returned.
+ 
+### Request Parameters
 
-###Request Parameters
 Parameter     | Description
 ------------- | -------------
 externalReferences | List of strings as external references.
@@ -103,9 +109,11 @@ min | Minimum instances of applicationComponent for this action.
 max | Maximum instances of applicationComponent for this action.
 count | Count variable to show how often this action has been triggered.
 applicationComponent | The id of the applicationComponent that is referenced in this action.
+{: .table .table-striped .table-responsive}
 
-###Request Example
-```
+### Request Example
+
+```json
 {
     "externalReferences":[
         "some_external_reference"
@@ -118,23 +126,23 @@ applicationComponent | The id of the applicationComponent that is referenced in 
 }
 ```
 
-###Response Codes
+### Response 
 
-**Response** No data.
+The created entity. See GET /api/componentHorizontalInScalingAction/{id}
+
+### Response Codes
 
 **Normal Response Code** 200
 
 **Error Response Code** 500 (server error), 403 (forbidden), 401 (unauthorized), 400 (bad request)
 
-***
-
 ## PUT /api/componentHorizontalInScalingAction/{id}
 
-###Description
+### Description
 
 Updates the ComponentHorizontalInScalingAction entity identified by the given id.
 
-**Request Parameters** 
+### Request Parameters
 
 Parameter     | Description
 ------------- | -------------
@@ -145,12 +153,14 @@ min | Minimum instances of applicationComponent for this action.
 max | Maximum instances of applicationComponent for this action.
 count | Count variable to show how often this action has been triggered.
 applicationComponent | The id of the applicationComponent that is referenced in this action.
+{: .table .table-striped .table-responsive}
 
-###Request Example
+### Request Example
+
 ```
 PUT /api/componentHorizontalInScalingAction/1
 ```
-```
+```json
 {
     "externalReferences":[
         "some_external_reference"
@@ -163,34 +173,34 @@ PUT /api/componentHorizontalInScalingAction/1
 }
 ```
 
-###Response
+### Response
 
 The updated entity. See GET /api/componentHorizontalInScalingAction/{id}
 
-###Response Codes
+### Response Codes
 
 **Normal Response Code** 200
 
 **Error Response Code** 500 (server error), 403 (forbidden), 401 (unauthorized), 404 (not found), 400 (bad request)
 
-***
-
 ## DELETE /api/componentHorizontalInScalingAction/{id}
 
-###Description
+### Description
 
 Deletes the ComponentHorizontalInScalingAction entity identified by the given {id}.
 
-###Request Parameters
+### Request Parameters
 
 Parameter     | Description
 ------------- | -------------
 id      | The id of the ComponentHorizontalInScalingAction to delete.
+{: .table .table-striped .table-responsive}
 
-###Response
+### Response
+
 No data.
 
-###Response Codes
+### Response Codes
 
 **Normal Response Code** 200
 
