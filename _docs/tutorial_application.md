@@ -6,14 +6,14 @@ title: Application Model
 ## Introduction
 
 After the description of the cloud, we can start to model the application.
-For this step the following information is needed:
+For this step the following information is needed.
 
-1. For each component of the application:
-    1. a script used for installing and starting the component on the virtual machine.
-    2. the image used for booting the virtual machine.
-    3. the hardware used for booting the virtual machine.
-    4. the location used for booting the virtual machine.
-2. The communication dependencies.
+1. For each component, i.e. a _LifecycleComponent_, of the application you need:
+    1. a script used for *install*ing and *start*ing the component on the virtual machine.
+    2. the _Image_ used for booting the virtual machine.
+    3. the _Hardware_ used for booting the virtual machine.
+    4. the _Location_ used for booting the virtual machine.
+2. The _Communication_ dependencies.
     
 A more detailed description for the application model is given in the
 corresponding [Documentation Section]({{site.url}}/docs/application.html).
@@ -34,8 +34,8 @@ For each script we define two start actions:
 
 In addition we define the following arguments for the scripts:
 
-- the application server installation scripts takes the database ip as argument.
-- the load balancer scripts takes multiple application server ips as argument.
+- the application server installation scripts takes the database IP address as argument.
+- the load balancer scripts takes multiple application server IP addresses as argument.
 
 This leads to the following scripts, also available at [Github](https://github.com/dbaur/mediawiki-tutorial/tree/master/scripts/shell). 
 These scripts rely on apt-get to install packages, and were only tested on Ubuntu 14.04 LTS.
@@ -348,43 +348,43 @@ esac
 As next step we have to select the desired cloud offers we want to use for the virtual machines
 started for the different application components.
 
-For simplicity reasons, we will use the same combination of image, hardware and 
-location for all application components.
+For simplicity reasons, we will use the same combination of _Image_, _Hardware_ and 
+_Location_ for all *ApplicationComponent*s.
 
 All cloud resources can be retrieved by using the respective list actions of [Colosseum's API]({{site.url}}/api/colosseum.html).
 
 ### Defining the virtual machine template
 
-Once we have selected the desired cloud resources, creating a virtual machine template is straightforward. As
+Once we have selected the desired cloud resources, creating a _VirtualMachineTemplate_ is straightforward. As
 all components are going to use the same template, we will create only one using the foreign keys of the respective resources.  
 
-## Defining the components, the application component and the application
+## Defining the *LifecycleComponent*s, the _ApplicationComponent_ and the _Application_
 
-When creating the application with Cloudiator the user has to define the following entities:
+When creating the _Application_ with Cloudiator the user has to define the following entities:
 
-- (Lifecycle) Components:
+- _LifecycleComponents_:
     - A component for the HaProxy Loadbalancer
     - A component for the Apache Webserver including MediaWiki
     - A component for the MariaDB database server.
-- Application:
+- _Application_:
     - One application: MediaWiki
-- Application Components
+- *ApplicationComponent*s
     - three application components, each linking the created components to the application.
     
-## Defining the communication
+## Defining the _Communication_
 
 ![Communication within the mediawiki application][mediawiki_communication]
 
-The picture depicts the communication within the Mediawiki Application.
+The picture depicts the _Communication_ within the Mediawiki _Application_.
 
-Provided Ports:
+*ProvidedPort*s:
     - MariaDB provides the database on port 3306.
     - Wiki (and Apache) provide the web server on port 80.
     - The HaProxy provides the load-balanced website on port 80.
-Required Ports:
+*RequiredPort*s:
     - HaProxy requires the webserver.
     - The wiki requires the database.
-Communication:
+_Communication_:
     - LOADBALANCERREQWIKI: link between the HaProxy and the webserver.
     - WIKIREQMARIADB: link between the web-server and the database.
     
@@ -491,7 +491,7 @@ MY_DIR="$(dirname "$0")"
 
 Finally, we can start creating the entities using the API of Cloudiator.
 
-### Creating the application
+### Creating the _Application_
 
 #### REST
 
@@ -514,7 +514,7 @@ Finally, we can start creating the entities using the API of Cloudiator.
 
 ![Creating the Application][application]
 
-### Creating the lifecycle components
+### Creating the *LifecycleComponent*s
 
 #### REST
 
@@ -576,7 +576,7 @@ Finally, we can start creating the entities using the API of Cloudiator.
 
 ![Creating the database component using the UI][component_db]
 
-### Creating the virtual machine template
+### Creating the _VirtualMachineTemplate_
 
 #### UI
 
@@ -605,7 +605,7 @@ Finally, we can start creating the entities using the API of Cloudiator.
 
 ```
 
-### Creating the application components
+### Creating the *ApplicationComponent*s
 
 #### UI
 
@@ -659,7 +659,7 @@ Finally, we can start creating the entities using the API of Cloudiator.
 
 ```
 
-### Creating the ports
+### Creating the *RequiredPort*s, and *ProvidedPort*s
 
 #### UI
 
@@ -730,7 +730,7 @@ See communication.
                 
 ```
 
-### Creating the communication
+### Creating the _Communication_
 
 #### UI
 
