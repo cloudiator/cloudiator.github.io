@@ -47,4 +47,23 @@ snapshot can be retrieved from the [OSSRH](https://oss.sonatype.org/content/repo
 
 ### Client
 
+#### Command Line Options
+
+| Option | Description |
+| --- | --- |
+| lca.client.config.registry | defines the registry that will be used, optional, ("rmiregistry","etcdregistry"), default "rmiregistry" |
+| lca.client.config.registry.etcd.hosts | recommended for etcdregistry : comma-separated list of <ip[:port]> information denoting etcd cluster; defaults to localhost:4001 (which limits applicability). |
+{: .table .table-striped .table-responsive}
+
 ### Server
+
+#### Command Line Options
+
+| Option | Description |
+| --- | --- |
+| host.ip.public | mandatory: public IP of this VM |
+| host.ip.private | mandatory: private (cloud-local IP of that VM) |
+| host.vm.cloud.tenant.id | mandatory: ID of tenant; unique in the scope of cloud provider. |
+| host.vm.cloud.id | mandatory: ID of cloud provider |
+| host.vm.id | mandatory: identifier of VM; unique in the scope of (cloud.id, tenant.id) |
+{: .table .table-striped .table-responsive}
