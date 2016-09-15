@@ -7,7 +7,7 @@ This tutorial provides a detailed step-by-step guide, helping you to deploy your
 using the Cloudiator toolset.
 
 Before starting with the tutorial, install the latest version of the Cloudiator toolset
-as described in the [Installation](docs/installation) section of the Documentation section.
+as described in the [Installation]({{site.url}}/docs/installation) section of the Documentation section.
 
 This tutorial will cover the following steps:
 
@@ -17,7 +17,7 @@ This tutorial will cover the following steps:
 4. We will deploy Mediawiki using Cloudiator.
 5. We will add a Scaling Rule and use Cloudiator's Adaptation mechanism to scale MediaWiki.
 
-Each step will be two-fold. First it will describe and explain the steps needed in detailed, also
-providing detailed knowledge and background information. At the end, each section will describe the actions
-required to execute the steps with the Cloudiator toolset, using a) the REST-API, b) our java client and
-c) our user interface.
+Each step will be two-fold. First it will describe and explain the steps needed in detail by
+providing knowledge and background information. At the end, each section will describe the actions
+required to execute the steps with the Cloudiator toolset, using a) the [REST-API]({{site.url}}/api/colosseum.html), 
+b) our [java client]({{site.url}}/components/colosseum-client.html) and c) our [user interface]({{site.url}}/components/ui.html).
