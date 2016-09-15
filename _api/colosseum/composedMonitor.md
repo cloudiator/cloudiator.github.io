@@ -1,22 +1,30 @@
-﻿# ComposedMonitor Actions
-***
+---
+layout: docs
+title: Composed Monitor
+endpoint: /api/composedMonitor
+---
 
-##Description
+## Description
+
 The ComposedMonitor entity represents a Monitor that is aggregated from other monitors.
 
 ## GET /api/composedMonitor
 
-###Description
+### Description
+
 Returns a list of ComposedMonitor types supported by the system.
 
-###Request Parameters
+### Request Parameters
+
 None
 
-###Response
+### Response
+
 A list of all ComposedMonitor entities stored in the database.
 
-###Response Example
-```
+### Response Example
+
+```json
 [
     {
         "flowOperator":"MAP",
@@ -38,31 +46,33 @@ A list of all ComposedMonitor entities stored in the database.
 
 ```
 
-###Response Codes
+### Response Codes
 
 **Normal Response Code** 200
 
 **Error Response Code** 500 (server error), 403 (forbidden), 401 (unauthorized)
 
-***
 
 ## GET /api/composedMonitor/{id}
 
-###Description
+### Description
 
 Returns the ComposedMonitor entity identified by the given {id}.
 
-###Request Parameters
+### Request Parameters
 
 Parameter     | Description
 ------------- | -------------
 id            | The id of the ComposedMonitor.
+{: .table .table-striped .table-responsive}
 
-###Response 
+### Response 
+
 The ComposedMonitor entity identified by the given id.
 
-###Response Example
-```
+### Response Example
+
+```json
 {
     "flowOperator":"MAP",
     "function":"AVG",
@@ -81,21 +91,20 @@ The ComposedMonitor entity identified by the given id.
 }
 ```
 
-###Response Codes
+### Response Codes
 
 **Normal Response Code** 200
 
 **Error Response Code** 500 (server error), 403 (forbidden), 401 (unauthorized), 404 (not found)
 
-***
-
 ## POST /api/composedMonitor
 
-###Description
+### Description
 
 Creates a new ComposedMonitor entity. The new entity will be returned.
 
-###Request Parameters
+### Request Parameters
+
 Parameter     | Description
 ------------- | -------------
 flowOperator | The Flow Operator for the monitor. Values: [MAP, REDUCE]
@@ -105,10 +114,11 @@ schedule | The id of the schedule.
 window | The id of the window.
 monitors | A list of ids of the scaling monitors.
 scalingActions | A list of ids of the scaling actions.
+{: .table .table-striped .table-responsive}
 
+### Request Example
 
-###Request Example
-```
+```json
 {
     "flowOperator":"MAP",
     "function":"AVG",
@@ -120,23 +130,23 @@ scalingActions | A list of ids of the scaling actions.
 }
 ```
 
-###Response Codes
+### Response
 
-**Response** No data.
+The created entity. See GET /api/composedMonitor/{id}
+
+### Response Codes
 
 **Normal Response Code** 200
 
 **Error Response Code** 500 (server error), 403 (forbidden), 401 (unauthorized), 400 (bad request)
 
-***
-
 ## PUT /api/composedMonitor/{id}
 
-###Description
+### Description
 
 Updates the ComposedMonitor entity identified by the given id.
 
-**Request Parameters** 
+### Request Parameters
 
 Parameter     | Description
 ------------- | -------------
@@ -148,13 +158,14 @@ schedule | The id of the schedule.
 window | The id of the window.
 monitors | A list of ids of the scaling monitors.
 scalingActions | A list of ids of the scaling actions.
+{: .table .table-striped .table-responsive}
 
+### Request Example
 
-###Request Example
 ```
 PUT /api/composedMonitor/1
 ```
-```
+```json
 {
     "flowOperator":"MAP",
     "function":"AVG",
@@ -166,34 +177,33 @@ PUT /api/composedMonitor/1
 }
 ```
 
-###Response
+### Response
 
 The updated entity. See GET /api/composedMonitor/{id}
 
-###Response Codes
+### Response Codes
 
 **Normal Response Code** 200
 
 **Error Response Code** 500 (server error), 403 (forbidden), 401 (unauthorized), 404 (not found), 400 (bad request)
 
-***
-
 ## DELETE /api/composedMonitor/{id}
 
-###Description
+### Description
 
 Deletes the ComposedMonitor entity identified by the given {id}.
 
-###Request Parameters
+### Request Parameters
 
 Parameter     | Description
 ------------- | -------------
 id            | The id of the ComposedMonitor to delete.
+{: .table .table-striped .table-responsive}
 
-###Response
+### Response
 No data.
 
-###Response Codes
+### Response Codes
 
 **Normal Response Code** 200
 
