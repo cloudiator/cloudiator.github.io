@@ -10,9 +10,9 @@ a cloud target.
 
 For this purpose, three entities have to be created:
 
-1. An Api, depicting the programming interface the cloud uses, e.g. Nova in case of Openstack.
-2. A Cloud, depicting the endpoint where the API of the cloud is reachable.
-3. A CloudCredential, depicting the user credentials for the given cloud endpoint.
+1. An _Api_, depicting the programming interface the cloud uses, e.g. Nova in case of Openstack.
+2. A _Cloud_, depicting the endpoint where the API of the cloud is reachable.
+3. A _CloudCredential_, depicting the user credentials for the given cloud endpoint.
 
 ## Openstack Example
 
@@ -20,10 +20,10 @@ In this example we will create the required entities using an Openstack Cloud.
 
 For this purpose, we will need the following information for your Openstack Cloud.
 
-1. The endpoint of the Openstack Cloud.
-2. Your tenant name.
-3. Your username.
-4. Your API Password.
+1. The _endpoint_ of the Openstack Cloud.
+2. Your _tenant_ name.
+3. Your _username_.
+4. Your API _password_.
 
 For other cloud providers, you can have a look at the [examples section]({{site.url}}/components/sword.html) of Sword. The code examples
 list the information required for those providers.
@@ -31,13 +31,13 @@ list the information required for those providers.
 You can easily retrieve this information from the Openstack dashboard:
 
 1. Login 
-2. Select the correct tenant from the tenant dropdown menu near the Openstack
+2. Select the correct _tenant_ from the tenant dropdown menu near the Openstack
 logo in the top-left edge. (If it does not exist, you only have one tenant and you can skip this step)
 3. Go to the "Compute" tab on the left navigation bar.
 4. Click Access & Security.
 5. Click the button "Download Openstack RC File".
-6. Open the file in the editor: endpoint maps to OS_AUTH_URL, tenant maps to OS_TENANT_NAME, username maps to
-OS_USERNAME and password is most likely the password you also used for dashboard authentication or OS_PASSWORD.
+6. Open the file in the editor: _endpoint_ maps to OS_AUTH_URL, _tenant_ maps to OS_TENANT_NAME, _username_ maps to
+OS_USERNAME and _password_ is most likely the password you also used for dashboard authentication or OS_PASSWORD.
 
 ## API Interaction
 
@@ -141,7 +141,7 @@ client.controller(CloudCredential.class).updateOrCreate(
 ## Discovery
 
 After having created the above entities, the discovery of colosseum will start, 
-importing the various offers (Images, Hardware and Locations) of
+importing the various offers (_Images_, _Hardware_ and _Locations_) of
 the cloud provider. You can see the discovered entities, when accessing the
 corresponding API endpoints.
   
