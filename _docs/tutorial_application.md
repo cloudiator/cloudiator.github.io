@@ -9,7 +9,7 @@ After the description of the cloud, we can start to model the application.
 For this step the following information is needed.
 
 1. For each component, i.e. a _LifecycleComponent_, of the application you need:
-    1. a script used for *install*ing and _start_ the component on the virtual machine.
+    1. a script used for *install*ing and *start*ing the component on the virtual machine.
     2. the _Image_ used for booting the virtual machine.
     3. the _Hardware_ used for booting the virtual machine.
     4. the _Location_ used for booting the virtual machine.
@@ -349,7 +349,7 @@ As next step we have to select the desired cloud offers we want to use for the v
 started for the different application components.
 
 For simplicity reasons, we will use the same combination of _Image_, _Hardware_ and 
-_Location_ for all _ApplicationComponent_s.
+_Location_ for all *ApplicationComponent*s.
 
 All cloud resources can be retrieved by using the respective list actions of [Colosseum's API]({{site.url}}/api/colosseum.html).
 
@@ -358,7 +358,7 @@ All cloud resources can be retrieved by using the respective list actions of [Co
 Once we have selected the desired cloud resources, creating a _VirtualMachineTemplate_ is straightforward. As
 all components are going to use the same template, we will create only one using the foreign keys of the respective resources.  
 
-## Defining the _LifecycleComponent_s, the _ApplicationComponent_ and the _Application_
+## Defining the *LifecycleComponent*s, the _ApplicationComponent_ and the _Application_
 
 When creating the _Application_ with Cloudiator the user has to define the following entities:
 
@@ -368,7 +368,7 @@ When creating the _Application_ with Cloudiator the user has to define the follo
     - A component for the MariaDB database server.
 - _Application_:
     - One application: MediaWiki
-- _ApplicationComponent_s
+- *ApplicationComponent*s
     - three application components, each linking the created components to the application.
     
 ## Defining the _Communication_
@@ -377,11 +377,11 @@ When creating the _Application_ with Cloudiator the user has to define the follo
 
 The picture depicts the _Communication_ within the Mediawiki _Application_.
 
-_ProvidedPort_s:
+*ProvidedPort*s:
     - MariaDB provides the database on port 3306.
     - Wiki (and Apache) provide the web server on port 80.
     - The HaProxy provides the load-balanced website on port 80.
-_RequiredPort_s:
+*RequiredPort*s:
     - HaProxy requires the webserver.
     - The wiki requires the database.
 _Communication_:
@@ -514,7 +514,7 @@ Finally, we can start creating the entities using the API of Cloudiator.
 
 ![Creating the Application][application]
 
-### Creating the _LifecycleComponent_s
+### Creating the *LifecycleComponent*s
 
 #### REST
 
@@ -605,7 +605,7 @@ Finally, we can start creating the entities using the API of Cloudiator.
 
 ```
 
-### Creating the _ApplicationComponent_s
+### Creating the *ApplicationComponent*s
 
 #### UI
 
@@ -659,7 +659,7 @@ Finally, we can start creating the entities using the API of Cloudiator.
 
 ```
 
-### Creating the _RequiredPort_s, and _ProvidedPort_s
+### Creating the *RequiredPort*s, and *ProvidedPort*s
 
 #### UI
 
