@@ -98,7 +98,9 @@ client.controller(CloudProperty.class).updateOrCreate(
 ```
 
 #### REST
-
+```
+/api/cloudProperty
+```
 ```json
 
 {
