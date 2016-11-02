@@ -61,7 +61,7 @@ Global configuration options are valid for all clouds.
 | Name | Description | Class |
 | ---- | ----------- | ----- |
 | sword.regions | A positive filter for the regions retrieved by Sword. Comma-separated list. | [Constants.SWORD_REGIONS](https://github.com/cloudiator/sword/blob/master/api/src/main/java/de/uniulm/omi/cloudiator/sword/api/properties/Constants.java) |
-| sword.sword.request.timeout | Request timeout for all request issued by sword. | [Constants.REQUEST_TIMEOUT](https://github.com/cloudiator/sword/blob/master/api/src/main/java/de/uniulm/omi/cloudiator/sword/api/properties/Constants.java) |
+| sword.request.timeout | Request timeout for all request issued by sword. | [Constants.REQUEST_TIMEOUT](https://github.com/cloudiator/sword/blob/master/api/src/main/java/de/uniulm/omi/cloudiator/sword/api/properties/Constants.java) |
 {: .table .table-striped .table-responsive}
 
 ### Cloud specific configuration options
