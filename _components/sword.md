@@ -65,7 +65,6 @@ Global configuration options are valid for all clouds.
 | sword.ssh.exponential.multiplier | Exponential Multiplier for SSH connection (default 1000). | [Constants.SSH_EXPONENTIAL_MULTIPLIER](https://github.com/cloudiator/sword/blob/master/api/src/main/java/de/uniulm/omi/cloudiator/sword/api/properties/Constants.java) |
 | sword.ssh.exponential.max.time | Maximum time to wait in exponential waiting strategy (default 30 seconds). | [Constants.SSH_EXPONENTIAL_MAX_TIME](https://github.com/cloudiator/sword/blob/master/api/src/main/java/de/uniulm/omi/cloudiator/sword/api/properties/Constants.java) |
 | sword.ssh.max.retries | Maximum number of retries (default 10). | [SSH_MAX_RETRIES](https://github.com/cloudiator/sword/blob/master/api/src/main/java/de/uniulm/omi/cloudiator/sword/api/properties/Constants.java) |
-
 {: .table .table-striped .table-responsive}
 
 ### Cloud specific configuration options
