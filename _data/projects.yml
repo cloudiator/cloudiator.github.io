@@ -23,3 +23,29 @@
     The project coordinator is Ulm University."
   logo: /images/projects/cactos.png
   webPage: http://www.cactosfp7.eu/
+
+- name: CloudPerfect
+  description: "CLOUDPERFECT aims at delivering a set of tools and processes that will enable a) Cloud providers to
+    enhance the stability and performance effectiveness of their infrastructures, through modelling and
+    understanding of the overheads and optimal groupings of concurrently running services, runtime
+    analysis and adaptation, thus gaining a competitive advantage b) Cloud adopters to understand the
+    computational nature of their applications, investigate abstracted and understandable QoS metrics and
+    how respective providers rank in them, how to balance their selection between cost and performance to
+    optimize their competitiveness and monitor the maintenance of their SLA c) 3rd parties to act as
+    independent validators of Cloud QoS features, enabling new business models through a constant
+    monitoring, benchmarking and evaluation process, filling a large gap in the current
+    brokerage/consultancy domain especially in the fields of performance evaluation and SLA auditing."
+  logo: /images/projects/cloudperfect.png
+  webPage: http://cloudperfect.eu
+
+- name: Melodic
+  description: "The MELODIC platform will enable data-intensive applications to run within defined
+    security, cost, and performance boundaries seamlessly on geographically distributed and federated
+    cloud infrastructures. MELODIC will thereby realise the potential of heterogeneous cloud environments
+    for big data and data-intensive applications by transparently taking advantage of distinct characteristics
+    of available private and public clouds, dynamically optimise resource utilisation, consider data locality,
+    conform to the user’s privacy needs and service requirements, and counter vendor lock-in. Hence,
+    the main objective of the MELODIC project is
+    to enable data-aware application deployments on geographically distributed and federated cloud infrastructures."
+  logo:
+  webPage: http://melodic.eu
